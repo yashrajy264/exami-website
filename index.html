@@ -1,581 +1,493 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exami — Unified Examination Infrastructure for India</title>
-  <meta name="description" content="Exami is the first unified platform for examination infrastructure in India—across government, private, and institutional exams. Phase 1 covers the pre and post exam lifecycle from application to results." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exami - Revolutionizing Digital Assessments</title>
+  <meta name="description" content="Transform your assessment experience with Exami's AI-powered platform. Secure, intelligent, and designed for the future of education.">
+  
+  <!-- Preload critical resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <meta name="theme-color" content="#1f75FF" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Exami — Assessment, Reinvented (Coming Soon)" />
-  <meta property="og:description" content="Create, deliver, and analyze assessments faster with AI. Join the waitlist for early access." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://exami.example.com/" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Exami — Assessment, Reinvented (Coming Soon)" />
-  <meta name="twitter:description" content="Create, deliver, and analyze assessments faster with AI. Join the waitlist for early access." />
-
-  <!-- Favicon (inline SVG) -->
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="100%" height="100%" rx="6" fill="%230f172a"/><text x="50%" y="58%" font-size="18" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">E</text></svg>' />
-
-  <!-- Preload CSS -->
-  <link rel="preload" href="./styles.css" as="style" />
-  <link rel="stylesheet" href="./styles.css" />
-
-  <!-- Minimal JSON-LD Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Exami",
-    "applicationCategory": "EducationApplication",
-    "description": "AI-powered assessment platform to create, deliver, and analyze tests faster.",
-    "operatingSystem": "Web",
-    "offers": { "@type": "Offer", "availability": "https://schema.org/PreOrder" }
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+  
+  <!-- Meta tags for social sharing -->
+  <meta property="og:title" content="Exami - Revolutionizing Digital Assessments">
+  <meta property="og:description" content="Transform your assessment experience with Exami's AI-powered platform.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container nav">
-      <div class="brand">
-        <span class="logo" aria-hidden="true">E</span>
-        <span class="brand-name">Exami</span>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
+  <!-- Navigation -->
+  <nav class="nav" data-nav>
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="logo">Exami</span>
       </div>
-      <button class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      
+      <div class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="./about.html" class="nav-link" data-nav>About</a>
+        <div class="nav-dropdown">
+          <button class="nav-link dropdown-trigger">Solutions <span class="dropdown-arrow">↓</span></button>
+          <div class="dropdown-menu">
+            <a href="./student.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon">🎓</div>
+              <div>
+                <div class="dropdown-title">For Students</div>
+                <div class="dropdown-desc">Enhanced learning experience</div>
+              </div>
+            </a>
+            <a href="./institution.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon">🏫</div>
+              <div>
+                <div class="dropdown-title">For Institutions</div>
+                <div class="dropdown-desc">Streamlined administration</div>
+              </div>
+            </a>
+            <a href="./government.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon">🏛️</div>
+              <div>
+                <div class="dropdown-title">For Government</div>
+                <div class="dropdown-desc">Policy & compliance tools</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="btn btn-ghost">Sign In</button>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <nav id="primary-nav" aria-label="Primary">
-        <ul class="nav-links">
-          <li><a href="/index.html#features" data-nav>Features</a></li>
-          <li><a href="/student.html" data-nav>Students</a></li>
-          <li><a href="/institution.html" data-nav>Institutions</a></li>
-          <li><a href="/government.html" data-nav>Government</a></li>
-          <li><a href="/vision.html" data-nav>Vision</a></li>
-          <li><a href="/about.html" data-nav>About</a></li>
-          <li class="nav-cta"><a class="btn btn-primary" href="/index.html#survey" data-nav>Join Survey</a></li>
-          <li><a class="btn btn-ghost" href="/index.html#waitlist" data-nav>Join Waitlist</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
-
-  <main id="main">
-    <!-- Hero -->
-    <section class="section hero hero-concept" aria-labelledby="hero-title">
-      <div class="bg-gradients" aria-hidden="true">
-        <span class="blob blob-1"></span>
-        <span class="blob blob-2"></span>
-      </div>
-      <div class="container hero-grid">
-        <div class="hero-content" data-reveal>
-          <div class="status-badge">
-            <span class="status-dot"></span>
-            <span>In Development</span>
-          </div>
-          <h1 id="hero-title">The future of unified examination infrastructure</h1>
-          <p class="subtitle">
-            We're building Exami to consolidate India's fragmented exam ecosystem. Join us in shaping the platform that will transform how students discover, apply, and succeed in examinations.
-          </p>
-          <div class="development-stats">
-            <div class="dev-stat">
-              <div class="stat-number">Phase 1</div>
-              <div class="stat-label">Current Development</div>
-            </div>
-            <div class="dev-stat">
-              <div class="stat-number">Q2 2024</div>
-              <div class="stat-label">Expected Beta</div>
-            </div>
-            <div class="dev-stat">
-              <div class="stat-number">500+</div>
-              <div class="stat-label">Early Adopters</div>
-            </div>
-          </div>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="#early-access">Join Early Access</a>
-            <a class="btn btn-ghost" href="#roadmap">View Roadmap</a>
-          </div>
-          <p class="note">🔒 Privacy-first • ⚡ Built for scale • 🎯 Student-centric design</p>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge" data-reveal>
+          <span class="badge-dot"></span>
+          Now in Beta
         </div>
-        <div class="hero-visual concept-mockup" role="img" aria-label="Exami concept mockups" data-reveal data-reveal-delay="120">
-          <div class="mockup-stack">
-            <div class="mockup-frame active" data-tilt>
-              <div class="mockup-header">
-                <div class="mockup-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="mockup-title">Exami Dashboard - Concept</div>
-              </div>
-              <div class="mockup-content">
-                <div class="concept-block">
-                  <h4>🎯 Smart Discovery</h4>
-                  <p>AI-powered exam recommendations</p>
-                </div>
-                <div class="concept-block">
-                  <h4>📋 One-Click Apply</h4>
-                  <p>Unified application system</p>
-                </div>
-                <div class="concept-block">
-                  <h4>📊 Progress Tracking</h4>
-                  <p>Real-time application status</p>
-                </div>
-              </div>
-            </div>
-            <div class="mockup-frame wireframe" data-tilt>
-              <div class="mockup-header">
-                <div class="mockup-title">Mobile App - Wireframe</div>
-              </div>
-              <div class="wireframe-content">
-                <div class="wire-block"></div>
-                <div class="wire-block small"></div>
-                <div class="wire-block medium"></div>
-                <div class="wire-grid">
-                  <div class="wire-item"></div>
-                  <div class="wire-item"></div>
-                  <div class="wire-item"></div>
-                </div>
-              </div>
-            </div>
+        
+        <h1 class="hero-title" data-reveal data-reveal-delay="100">
+          The Future of
+          <span class="gradient-text">Digital Assessments</span>
+          is Here
+        </h1>
+        
+        <p class="hero-subtitle" data-reveal data-reveal-delay="200">
+          Transform how you create, deliver, and analyze assessments with our AI-powered platform. 
+          Secure, intelligent, and designed for the modern world.
+        </p>
+        
+        <div class="hero-actions" data-reveal data-reveal-delay="300">
+          <button class="btn btn-primary btn-large">
+            Start Free Trial
+            <span class="btn-arrow">→</span>
+          </button>
+          <button class="btn btn-ghost btn-large">
+            <span class="play-icon">▶</span>
+            Watch Demo
+          </button>
+        </div>
+        
+        <div class="hero-stats" data-reveal data-reveal-delay="400">
+          <div class="stat">
+            <div class="stat-number" data-counter data-count-to="50000" data-suffix="+">0</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number" data-counter data-count-to="99.9" data-suffix="%">0</div>
+            <div class="stat-label">Uptime</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number" data-counter data-count-to="2.5" data-suffix="M+">0</div>
+            <div class="stat-label">Assessments</div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Development Progress -->
-    <section class="section progress-section" aria-labelledby="progress-title">
-      <div class="container">
-        <h2 id="progress-title" data-reveal>Development Progress</h2>
-        <div class="progress-grid">
-          <div class="progress-card" data-reveal>
-            <div class="progress-header">
-              <h3>Core Platform</h3>
-              <span class="progress-percent">75%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 75%"></div>
-            </div>
-            <p>User authentication, dashboard, basic navigation</p>
-          </div>
-          <div class="progress-card" data-reveal data-reveal-delay="100">
-            <div class="progress-header">
-              <h3>Application System</h3>
-              <span class="progress-percent">45%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 45%"></div>
-            </div>
-            <p>Form builder, document upload, payment integration</p>
-          </div>
-          <div class="progress-card" data-reveal data-reveal-delay="200">
-            <div class="progress-header">
-              <h3>Institution Portal</h3>
-              <span class="progress-percent">30%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 30%"></div>
-            </div>
-            <p>Exam management, applicant review, result publishing</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Concept Showcase -->
-    <section id="concepts" class="section concepts" aria-labelledby="concepts-title">
-      <div class="container">
-        <h2 id="concepts-title" data-reveal>Product Concepts & Mockups</h2>
-        <div class="concept-gallery">
-          <div class="concept-item" data-reveal>
-            <div class="concept-preview">
-              <div class="preview-header">Student Dashboard</div>
-              <div class="preview-content">
-                <div class="preview-nav"></div>
-                <div class="preview-cards">
-                  <div class="preview-card"></div>
-                  <div class="preview-card"></div>
-                  <div class="preview-card small"></div>
-                </div>
+      
+      <div class="hero-visual" data-reveal data-reveal-delay="500">
+        <div class="mockup-container">
+          <div class="mockup-main">
+            <div class="mockup-header">
+              <div class="mockup-controls">
+                <span class="control red"></span>
+                <span class="control yellow"></span>
+                <span class="control green"></span>
               </div>
+              <div class="mockup-title">Exami Dashboard</div>
             </div>
-            <div class="concept-info">
-              <h3>Unified Student Dashboard</h3>
-              <p>One place to discover, track, and manage all exam applications with personalized recommendations.</p>
-              <div class="concept-status">🎨 Design Phase</div>
-            </div>
-          </div>
-          <div class="concept-item" data-reveal data-reveal-delay="100">
-            <div class="concept-preview">
-              <div class="preview-header">Application Flow</div>
-              <div class="preview-content">
-                <div class="flow-steps">
-                  <div class="flow-step">1</div>
-                  <div class="flow-arrow">→</div>
-                  <div class="flow-step">2</div>
-                  <div class="flow-arrow">→</div>
-                  <div class="flow-step">3</div>
-                </div>
-                <div class="flow-labels">
-                  <span>Discover</span>
-                  <span>Apply</span>
-                  <span>Track</span>
-                </div>
+            <div class="mockup-content">
+              <div class="mockup-sidebar">
+                <div class="sidebar-item active">📊 Dashboard</div>
+                <div class="sidebar-item">📝 Assessments</div>
+                <div class="sidebar-item">👥 Students</div>
+                <div class="sidebar-item">📈 Analytics</div>
               </div>
-            </div>
-            <div class="concept-info">
-              <h3>Streamlined Application Process</h3>
-              <p>Three-step application flow that eliminates redundant form filling and document uploads.</p>
-              <div class="concept-status">⚡ In Development</div>
-            </div>
-          </div>
-          <div class="concept-item" data-reveal data-reveal-delay="200">
-            <div class="concept-preview">
-              <div class="preview-header">Institution Portal</div>
-              <div class="preview-content">
-                <div class="portal-layout">
-                  <div class="portal-sidebar"></div>
-                  <div class="portal-main">
-                    <div class="portal-stats"></div>
-                    <div class="portal-table"></div>
+              <div class="mockup-main-content">
+                <div class="content-header">
+                  <h3>Recent Assessments</h3>
+                  <div class="progress-ring">
+                    <svg class="progress-svg" width="60" height="60">
+                      <circle class="progress-bg" cx="30" cy="30" r="25"></circle>
+                      <circle class="progress-fill" cx="30" cy="30" r="25" style="--progress: 75"></circle>
+                    </svg>
+                    <span class="progress-text">75%</span>
+                  </div>
+                </div>
+                <div class="content-cards">
+                  <div class="mini-card">
+                    <div class="card-icon">📚</div>
+                    <div class="card-info">
+                      <div class="card-title">Mathematics Quiz</div>
+                      <div class="card-meta">142 submissions</div>
+                    </div>
+                  </div>
+                  <div class="mini-card">
+                    <div class="card-icon">🧪</div>
+                    <div class="card-info">
+                      <div class="card-title">Science Test</div>
+                      <div class="card-meta">89 submissions</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="concept-info">
-              <h3>Institution Management Portal</h3>
-              <p>Comprehensive dashboard for institutions to manage exams, review applications, and publish results.</p>
-              <div class="concept-status">📋 Planned</div>
+          </div>
+          
+          <div class="floating-cards">
+            <div class="floating-card card-1">
+              <div class="card-header">🔒 Security</div>
+              <div class="card-content">End-to-end encryption</div>
+            </div>
+            <div class="floating-card card-2">
+              <div class="card-header">🤖 AI Powered</div>
+              <div class="card-content">Smart proctoring</div>
+            </div>
+            <div class="floating-card card-3">
+              <div class="card-header">📊 Analytics</div>
+              <div class="card-content">Real-time insights</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Features Roadmap -->
-    <section id="roadmap" class="section roadmap-section" aria-labelledby="roadmap-title">
-      <div class="container">
-        <h2 id="roadmap-title" data-reveal>Development Roadmap</h2>
-        <div class="roadmap-timeline">
-          <div class="timeline-item completed" data-reveal>
-            <div class="timeline-marker">✓</div>
-            <div class="timeline-content">
-              <h3>Phase 0: Foundation</h3>
-              <p class="timeline-date">Q4 2023 - Q1 2024</p>
-              <ul>
-                <li>Market research & user interviews</li>
-                <li>Technical architecture design</li>
-                <li>Brand identity & initial mockups</li>
-                <li>Core team assembly</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item active" data-reveal data-reveal-delay="100">
-            <div class="timeline-marker">🚧</div>
-            <div class="timeline-content">
-              <h3>Phase 1: MVP Development</h3>
-              <p class="timeline-date">Q1 - Q2 2024</p>
-              <ul>
-                <li>Student registration & profile system</li>
-                <li>Basic exam discovery & search</li>
-                <li>Simple application workflow</li>
-                <li>Institution onboarding portal</li>
-              </ul>
-              <div class="phase-progress">
-                <div class="progress-label">Progress: 65%</div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 65%"></div>
+    </div>
+  </section>
+  
+  <!-- Features Bento Grid -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">Powerful Features for Modern Assessment</h2>
+        <p class="section-subtitle">Everything you need to create, deliver, and analyze assessments at scale</p>
+      </div>
+      
+      <div class="bento-grid" data-reveal data-reveal-delay="200">
+        <div class="bento-item large" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🤖</div>
+            <h3 class="bento-title">AI-Powered Proctoring</h3>
+            <p class="bento-description">Advanced AI monitors assessments in real-time, detecting suspicious behavior while maintaining student privacy.</p>
+            <div class="bento-visual">
+              <div class="ai-demo">
+                <div class="detection-overlay">
+                  <div class="detection-point active" style="top: 30%; left: 40%;"></div>
+                  <div class="detection-point" style="top: 60%; left: 70%;"></div>
+                </div>
+                <div class="ai-status">
+                  <span class="status-dot green"></span>
+                  Monitoring Active
                 </div>
               </div>
             </div>
           </div>
-          <div class="timeline-item" data-reveal data-reveal-delay="200">
-            <div class="timeline-marker">📅</div>
-            <div class="timeline-content">
-              <h3>Phase 2: Beta Launch</h3>
-              <p class="timeline-date">Q3 2024</p>
-              <ul>
-                <li>Advanced application features</li>
-                <li>Document management system</li>
-                <li>Payment gateway integration</li>
-                <li>Mobile app development</li>
-              </ul>
+        </div>
+        
+        <div class="bento-item medium" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">📊</div>
+            <h3 class="bento-title">Real-time Analytics</h3>
+            <p class="bento-description">Get instant insights into student performance and assessment effectiveness.</p>
+            <div class="chart-demo">
+              <div class="chart-bar" style="height: 60%;"></div>
+              <div class="chart-bar" style="height: 80%;"></div>
+              <div class="chart-bar" style="height: 45%;"></div>
+              <div class="chart-bar" style="height: 90%;"></div>
             </div>
           </div>
-          <div class="timeline-item" data-reveal data-reveal-delay="300">
-            <div class="timeline-marker">🎯</div>
-            <div class="timeline-content">
-              <h3>Phase 3: Scale & Optimize</h3>
-              <p class="timeline-date">Q4 2024</p>
-              <ul>
-                <li>AI-powered recommendations</li>
-                <li>Advanced analytics dashboard</li>
-                <li>API for third-party integrations</li>
-                <li>Multi-language support</li>
-              </ul>
+        </div>
+        
+        <div class="bento-item medium" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🔒</div>
+            <h3 class="bento-title">Bank-Grade Security</h3>
+            <p class="bento-description">End-to-end encryption and secure infrastructure protect your data.</p>
+            <div class="security-demo">
+              <div class="encryption-visual">
+                <div class="data-flow">
+                  <span class="data-packet">📄</span>
+                  <span class="encryption-arrow">→</span>
+                  <span class="encrypted-data">🔐</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bento-item small" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">⚡</div>
+            <h3 class="bento-title">Lightning Fast</h3>
+            <p class="bento-description">Sub-second response times for seamless user experience.</p>
+          </div>
+        </div>
+        
+        <div class="bento-item small" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🌐</div>
+            <h3 class="bento-title">Global Scale</h3>
+            <p class="bento-description">Serve millions of users across 50+ countries simultaneously.</p>
+          </div>
+        </div>
+        
+        <div class="bento-item wide" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🎯</div>
+            <h3 class="bento-title">Adaptive Testing</h3>
+            <p class="bento-description">AI adjusts question difficulty based on student responses for personalized assessment experience.</p>
+            <div class="adaptive-demo">
+              <div class="question-flow">
+                <div class="question-node easy">Easy</div>
+                <div class="flow-arrow">→</div>
+                <div class="question-node medium active">Medium</div>
+                <div class="flow-arrow">→</div>
+                <div class="question-node hard">Hard</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Early Access CTA -->
-    <section id="early-access" class="section cta-section" aria-labelledby="cta-title">
-      <div class="container">
-        <div class="cta-content" data-reveal>
-          <h2 id="cta-title">Join the Early Access Program</h2>
-          <p>Be among the first to experience Exami and help shape the future of examination infrastructure in India.</p>
-          <div class="early-access-benefits">
-            <div class="benefit">
-              <span class="benefit-icon">🚀</span>
-              <span>First access to new features</span>
-            </div>
-            <div class="benefit">
-              <span class="benefit-icon">💬</span>
-              <span>Direct feedback channel</span>
-            </div>
-            <div class="benefit">
-              <span class="benefit-icon">🎁</span>
-              <span>Exclusive early adopter perks</span>
-            </div>
+    </div>
+  </section>
+  
+  <!-- Solutions Section -->
+  <section id="solutions" class="solutions-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">Built for Every Use Case</h2>
+        <p class="section-subtitle">From individual educators to large institutions, Exami scales with your needs</p>
+      </div>
+      
+      <div class="solutions-grid">
+        <div class="solution-card" data-reveal data-reveal-delay="100">
+          <div class="solution-header">
+            <div class="solution-icon">🎓</div>
+            <h3 class="solution-title">For Students</h3>
           </div>
-          <form class="early-access-form">
-            <div class="form-group">
-              <input type="email" placeholder="Enter your email" required>
-              <select required>
-                <option value="">I am a...</option>
-                <option value="student">Student</option>
-                <option value="institution">Institution</option>
-                <option value="government">Government Body</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Join Early Access</button>
-          </form>
-          <p class="form-note">We'll notify you when beta testing begins. No spam, unsubscribe anytime.</p>
+          <p class="solution-description">Experience stress-free assessments with our intuitive interface and fair proctoring system.</p>
+          <ul class="solution-features">
+            <li>✓ User-friendly interface</li>
+            <li>✓ Instant feedback</li>
+            <li>✓ Progress tracking</li>
+            <li>✓ Mobile compatibility</li>
+          </ul>
+          <a href="./student.html" class="solution-link" data-nav>
+            Learn More <span class="link-arrow">→</span>
+          </a>
+        </div>
+        
+        <div class="solution-card" data-reveal data-reveal-delay="200">
+          <div class="solution-header">
+            <div class="solution-icon">🏫</div>
+            <h3 class="solution-title">For Institutions</h3>
+          </div>
+          <p class="solution-description">Streamline your assessment process with powerful administrative tools and detailed analytics.</p>
+          <ul class="solution-features">
+            <li>✓ Bulk user management</li>
+            <li>✓ Advanced reporting</li>
+            <li>✓ Integration support</li>
+            <li>✓ Custom branding</li>
+          </ul>
+          <a href="./institution.html" class="solution-link" data-nav>
+            Learn More <span class="link-arrow">→</span>
+          </a>
+        </div>
+        
+        <div class="solution-card" data-reveal data-reveal-delay="300">
+          <div class="solution-header">
+            <div class="solution-icon">🏛️</div>
+            <h3 class="solution-title">For Government</h3>
+          </div>
+          <p class="solution-description">Meet compliance requirements with our secure, auditable platform designed for public sector needs.</p>
+          <ul class="solution-features">
+            <li>✓ Compliance ready</li>
+            <li>✓ Audit trails</li>
+            <li>✓ Data sovereignty</li>
+            <li>✓ 24/7 support</li>
+          </ul>
+          <a href="./government.html" class="solution-link" data-nav>
+            Learn More <span class="link-arrow">→</span>
+          </a>
         </div>
       </div>
-    </section>
-    <!-- Metrics (Oh Dear–style) -->
-    <section class="section metrics" aria-labelledby="metrics-title">
-      <h2 id="metrics-title" class="sr-only">Exami Metrics</h2>
-      <div class="container metrics-grid">
-        <article class="metric" data-reveal data-tilt>
-          <div class="number">
-            <span data-counter data-count-to="250000" data-duration="1600" data-suffix="+">0</span>
-          </div>
-          <div class="label">Students registered</div>
-        </article>
-        <article class="metric" data-reveal data-tilt data-reveal-delay="80">
-          <div class="number">
-            <span data-counter data-count-to="1200" data-duration="1400" data-suffix="+">0</span>
-          </div>
-          <div class="label">Exams conducted</div>
-        </article>
-        <article class="metric" data-reveal data-tilt data-reveal-delay="160">
-          <div class="number">
-            <span data-counter data-count-to="340" data-duration="1400" data-suffix="+">0</span>
-          </div>
-          <div class="label">Institutions onboarded</div>
-        </article>
+    </div>
+  </section>
+  
+  <!-- FAQ Accordion -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about Exami</p>
       </div>
-    </section>
-
-    <!-- Trust indicators -->
-    <section class="section trust" aria-labelledby="trust-title">
-      <div class="container">
-        <h2 id="trust-title" class="sr-only">Trusted by</h2>
-        <div class="trust-row">
-          <span class="trust-badge" aria-label="Trusted by leading institutions">Trusted by leading institutions</span>
-          <div class="trust-logos" aria-hidden="true">
-            <div class="trust-logo">IIT</div>
-            <div class="trust-logo">NIT</div>
-            <div class="trust-logo">AIIMS</div>
-            <div class="trust-logo">CBSE</div>
-            <div class="trust-logo">ICAI</div>
+      
+      <div class="faq-accordion" data-reveal data-reveal-delay="200">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How secure is Exami's proctoring system?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Exami uses bank-grade encryption and advanced AI to ensure the highest level of security. All data is encrypted in transit and at rest, and our proctoring system is designed to protect student privacy while maintaining assessment integrity.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can Exami integrate with existing LMS platforms?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, Exami seamlessly integrates with popular LMS platforms including Canvas, Blackboard, Moodle, and more. Our API-first approach ensures smooth data flow and single sign-on capabilities.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if a student experiences technical issues during an exam?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Exami includes automatic save functionality and connection recovery. If technical issues occur, students can resume their exam from where they left off. Our 24/7 support team is also available to assist immediately.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does AI proctoring work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our AI system monitors video, audio, and screen activity to detect potential cheating behaviors. It uses machine learning to distinguish between normal and suspicious activities, flagging only genuine concerns for human review.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is there a free trial available?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we offer a 14-day free trial with full access to all features. No credit card required to start, and you can upgrade or cancel anytime during the trial period.</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Screens strip -->
-    <section id="screens" class="section screens" aria-labelledby="screens-title">
-      <div class="container">
-        <h2 id="screens-title" data-reveal>Built for both students and institutions</h2>
-        <div class="grid screen-grid">
-          <article class="screen-card" data-reveal>
-            <h3>Pre & Post Exam Flow</h3>
-            <p>From announcement to application and results. Admit cards, notifications, and scorecards included.</p>
-          </article>
-          <article class="screen-card" data-reveal data-reveal-delay="100">
-            <h3>Single Exami ID</h3>
-            <p>Every student gets one 8‑digit alphanumeric ID to apply across multiple institutions without friction.</p>
-          </article>
-          <article class="screen-card" data-reveal data-reveal-delay="200">
-            <h3>Docs Drive & Scanner</h3>
-            <p>Link Google or let Exami manage a secure drive for verified documents and quick uploads.</p>
-          </article>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-reveal>
+        <h2 class="cta-title">Ready to Transform Your Assessments?</h2>
+        <p class="cta-subtitle">Join thousands of educators and institutions already using Exami</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-large">
+            Start Free Trial
+            <span class="btn-arrow">→</span>
+          </button>
+          <button class="btn btn-ghost btn-large">Schedule Demo</button>
         </div>
       </div>
-    </section>
-    
-    <!-- Features -->
-    <section id="features" class="section section-alt" aria-labelledby="features-title">
-      <div class="container">
-        <h2 id="features-title" data-reveal>Why Exami</h2>
-        <div class="grid features-grid">
-          <article class="feature" data-reveal data-tilt>
-            <div class="icon" aria-hidden="true">🧩</div>
-            <h3>Unified Platform</h3>
-            <p>Government, private, and institution exams on one reliable platform.</p>
-          </article>
-          <article class="feature" data-reveal data-reveal-delay="80" data-tilt>
-            <div class="icon" aria-hidden="true">🛠️</div>
-            <h3>Institution Dashboard</h3>
-            <p>Create announcements, build forms with blocks, choose payments, publish, edit, and notify.</p>
-          </article>
-          <article class="feature" data-reveal data-reveal-delay="160" data-tilt>
-            <div class="icon" aria-hidden="true">🏢</div>
-            <h3>Center Management</h3>
-            <p>Link exam centers and auto‑assign by pincode or preference at scale.</p>
-          </article>
-          <article class="feature" data-reveal data-reveal-delay="240" data-tilt>
-            <div class="icon" aria-hidden="true">🎒</div>
-            <h3>Student Experience</h3>
-            <p>Easy apply, planner calendar, documents, and a single 8‑digit Exami ID.</p>
-          </article>
-          <article class="feature" data-reveal data-reveal-delay="320" data-tilt>
-            <div class="icon" aria-hidden="true">🔒</div>
-            <h3>Privacy by Design</h3>
-            <p>Institutions see only submitted data. User data is purpose‑bound and protected.</p>
-          </article>
-          <article class="feature" data-reveal data-reveal-delay="400" data-tilt>
-            <div class="icon" aria-hidden="true">⚡</div>
-            <h3>Scalable Infra</h3>
-            <p>Handles massive traffic without downtime during peak windows.</p>
-          </article>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">Exami</div>
+          <p class="footer-tagline">Revolutionizing digital assessments with AI-powered security and insights.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">GitHub</a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4 class="footer-title">Product</h4>
+            <a href="#features" class="footer-link">Features</a>
+            <a href="#solutions" class="footer-link">Solutions</a>
+            <a href="#pricing" class="footer-link">Pricing</a>
+            <a href="./about.html" class="footer-link" data-nav>About</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4 class="footer-title">Solutions</h4>
+            <a href="./student.html" class="footer-link" data-nav>For Students</a>
+            <a href="./institution.html" class="footer-link" data-nav>For Institutions</a>
+            <a href="./government.html" class="footer-link" data-nav>For Government</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4 class="footer-title">Support</h4>
+            <a href="#" class="footer-link">Documentation</a>
+            <a href="#" class="footer-link">Help Center</a>
+            <a href="#" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Status</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4 class="footer-title">Legal</h4>
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Terms</a>
+            <a href="#" class="footer-link">Security</a>
+          </div>
         </div>
       </div>
-    </section>
-    
-    <!-- Institutions flow -->
-    <section id="how" class="section" aria-labelledby="how-title">
-      <div class="container">
-        <h2 id="how-title" data-reveal>For institutions — create, publish, manage</h2>
-        <ol class="how-steps">
-          <li data-reveal>Announce exam → fill details → attach policy docs</li>
-          <li data-reveal data-reveal-delay="80">Create the application form with blocks (fields, uploads, validations)</li>
-          <li data-reveal data-reveal-delay="160">Pick payment methods and fees</li>
-          <li data-reveal data-reveal-delay="240">Link exam centers (capacity, pin code rules)</li>
-          <li data-reveal data-reveal-delay="320">Publish. Push notifications to relevant candidates</li>
-        </ol>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© <span id="year">2024</span> Exami. All rights reserved.</p>
       </div>
-    </section>
-    
-    <!-- Roadmap (horizontal scroll-snap) -->
-    <section id="roadmap" class="section section-alt" aria-labelledby="roadmap-title">
-      <div class="container">
-        <h2 id="roadmap-title" data-reveal>Roadmap</h2>
-      </div>
-      <div class="roadmap-wrap">
-        <div class="roadmap-track" tabindex="0" aria-label="Roadmap timeline">
-          <article class="roadmap-card" data-tilt>
-            <h3>Phase 1</h3>
-            <p>Application → Admit card → Results. Scorecards tied to Exami ID.</p>
-          </article>
-          <article class="roadmap-card" data-tilt>
-            <h3>Phase 2</h3>
-            <p>Test center ops: RFID/bio entry, seat allotment, center management.</p>
-          </article>
-          <article class="roadmap-card" data-tilt>
-            <h3>Phase 3 (MEERA)</h3>
-            <p>AI to prevent paper leak with dynamic question banks; global licensing.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Waitlist (unchanged form behavior) -->
-    <section id="waitlist" class="section waitlist" aria-labelledby="waitlist-title">
-      <div class="container">
-        <h2 id="waitlist-title" data-reveal>Join the waitlist</h2>
-        <p data-reveal data-reveal-delay="80">Get early access and product updates. No spam, unsubscribe anytime.</p>
-        <form id="waitlist-form" novalidate data-reveal data-reveal-delay="120">
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" inputmode="email" placeholder="you@example.com" required aria-required="true" />
-            <p class="field-hint" id="emailHint">We'll only use this to contact you about Exami.</p>
-          </div>
-          <div class="form-row">
-            <label for="role">Role (optional)</label>
-            <select id="role" name="role">
-              <option value="">Select a role</option>
-              <option value="education">Education</option>
-              <option value="bootcamp">Bootcamp</option>
-              <option value="hiring">Hiring/HR</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <button class="btn btn-primary" type="submit">Request Early Access</button>
-          <p id="form-message" role="status" aria-live="polite" class="form-message" hidden></p>
-        </form>
-      </div>
-    </section>
-    <!-- Survey -->
-    <section id="survey" class="section" aria-labelledby="survey-title">
-      <div class="container">
-        <h2 id="survey-title" data-reveal>Join the survey</h2>
-        <p class="subtitle" data-reveal data-reveal-delay="80">Help us shape Exami. Share your needs as a student or an institution.</p>
-        <form id="survey-form" novalidate data-reveal data-reveal-delay="120">
-          <div class="grid survey-grid">
-            <div class="form-row">
-              <label for="survey_name">Name</label>
-              <input id="survey_name" name="name" type="text" placeholder="Your name" required />
-            </div>
-            <div class="form-row">
-              <label for="survey_email">Email</label>
-              <input id="survey_email" name="email" type="email" inputmode="email" placeholder="you@example.com" required />
-            </div>
-            <div class="form-row">
-              <label for="survey_role">I am a</label>
-              <select id="survey_role" name="role" required>
-                <option value="">Select one</option>
-                <option value="student">Student</option>
-                <option value="institution">Institution</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-row form-row-full">
-              <label for="survey_feedback">What problems should Exami solve for you?</label>
-              <textarea id="survey_feedback" name="feedback" rows="4" placeholder="Tell us your biggest pain points..." required></textarea>
-            </div>
-          </div>
-          <button class="btn btn-primary" type="submit">Submit Survey</button>
-          <p id="survey-message" role="status" aria-live="polite" class="form-message" hidden></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Exami. All rights reserved.</p>
-      <nav aria-label="Footer">
-        <ul class="footer-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#problems">Problems</a></li>
-          <li><a href="#waitlist">Waitlist</a></li>
-        </ul>
-      </nav>
     </div>
   </footer>
-
+  
   <script src="./app.js" defer></script>
 </body>
 </html>
