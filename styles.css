@@ -435,9 +435,9 @@ p {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 120px;
   padding-bottom: var(--space-2xl);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-bg {
@@ -1343,7 +1343,6 @@ p {
   height: 580px;
   border-radius: 40px;
   padding: 8px;
-  box-shadow: var(--shadow-xl);
   position: relative;
   z-index: 2;
   transform: translateY(-20px);
@@ -1355,13 +1354,11 @@ p {
   height: auto;
   max-width: 300px;
   border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .mobile-mockup:hover .mobile-app-image {
   transform: translateY(-5px);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-header {
@@ -1768,7 +1765,7 @@ p {
   right: 0;
   bottom: 0;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .floating-screen {
@@ -1780,24 +1777,23 @@ p {
   box-shadow: var(--shadow-lg);
   padding: 12px;
   animation: float 6s ease-in-out infinite;
-  overflow: hidden;
 }
 
 .screen-1 {
   top: 15%;
-  left: -15%;
+  left: -10%;
   animation-delay: 0s;
 }
 
 .screen-2 {
   top: 45%;
-  right: -25%;
+  right: -20%;
   animation-delay: 2s;
 }
 
 .screen-3 {
   top: 70%;
-  left: -15%;
+  left: -10%;
   animation-delay: 4s;
 }
 
