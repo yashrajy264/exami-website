@@ -255,7 +255,7 @@
       submitBtn.disabled = true;
       
       setTimeout(() => {
-        submitBtn.textContent = '✓ Joined!';
+        submitBtn.innerHTML = '<span class="material-icons">check</span> Joined!';
         setTimeout(() => {
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;

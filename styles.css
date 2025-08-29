@@ -2065,6 +2065,51 @@ p {
   }
 }
 
+/* ===== MATERIAL ICONS STYLING ===== */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+/* Adjust icon sizes for different contexts */
+.dropdown-icon .material-icons {
+  font-size: 20px;
+}
+
+.bento-icon .material-icons {
+  font-size: 32px;
+}
+
+.solution-icon .material-icons {
+  font-size: 28px;
+}
+
+.quick-action .material-icons {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.status-item .material-icons {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.solution-features li .material-icons {
+  font-size: 16px;
+  margin-right: 8px;
+  color: var(--success);
+}
+
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
   *,
