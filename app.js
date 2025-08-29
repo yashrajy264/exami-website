@@ -356,46 +356,81 @@
   class CustomCursor {
       constructor() {
           this.cursor = null;
-          this.cursorDot = null;
+          this.cursorFollower = null;
+          this.cursorMagnetic = null;
+          this.mouseX = 0;
+          this.mouseY = 0;
+          this.followerX = 0;
+          this.followerY = 0;
+          this.magneticX = 0;
+          this.magneticY = 0;
           this.init();
       }
   
       init() {
-          // Create cursor elements
-          this.cursor = document.createElement('div');
-          this.cursor.className = 'custom-cursor';
-          this.cursorDot = document.createElement('div');
-          this.cursorDot.className = 'custom-cursor-dot';
+          // Get existing cursor elements
+          this.cursor = document.querySelector('.cursor');
+          this.cursorFollower = document.querySelector('.cursor-follower');
+          this.cursorMagnetic = document.querySelector('.cursor-magnetic');
           
-          document.body.appendChild(this.cursor);
-          document.body.appendChild(this.cursorDot);
+          if (!this.cursor || !this.cursorFollower || !this.cursorMagnetic) {
+              console.warn('Cursor elements not found');
+              return;
+          }
   
           // Mouse move handler
-          this.handleMouseMove = throttle((e) => {
-              this.cursor.style.left = e.clientX + 'px';
-              this.cursor.style.top = e.clientY + 'px';
-              this.cursorDot.style.left = e.clientX + 'px';
-              this.cursorDot.style.top = e.clientY + 'px';
-          }, 16);
+          this.handleMouseMove = (e) => {
+              this.mouseX = e.clientX;
+              this.mouseY = e.clientY;
+              
+              // Update cursor position immediately
+              this.cursor.style.left = this.mouseX + 'px';
+              this.cursor.style.top = this.mouseY + 'px';
+          };
   
           document.addEventListener('mousemove', this.handleMouseMove);
           
-          // Hover effects
+          // Start animation loop for follower elements
+          this.animate();
+          
+          // Add hover effects
           this.addHoverEffects();
       }
   
+      animate() {
+          // Smooth following animation
+          const ease = 0.15;
+          const magneticEase = 0.08;
+          
+          this.followerX += (this.mouseX - this.followerX) * ease;
+          this.followerY += (this.mouseY - this.followerY) * ease;
+          
+          this.magneticX += (this.mouseX - this.magneticX) * magneticEase;
+          this.magneticY += (this.mouseY - this.magneticY) * magneticEase;
+          
+          this.cursorFollower.style.left = this.followerX + 'px';
+          this.cursorFollower.style.top = this.followerY + 'px';
+          
+          this.cursorMagnetic.style.left = this.magneticX + 'px';
+          this.cursorMagnetic.style.top = this.magneticY + 'px';
+          
+          requestAnimationFrame(() => this.animate());
+      }
+  
       addHoverEffects() {
-          const hoverElements = document.querySelectorAll('a, button, .interactive, .card, .feature-card, .solution-card');
+          const hoverElements = document.querySelectorAll('a, button, .interactive, .card, .feature-card, .solution-card, .btn, .nav-link, .dropdown-item');
           
           hoverElements.forEach(element => {
               element.addEventListener('mouseenter', () => {
                   this.cursor.classList.add('cursor-hover');
-                  this.cursorDot.classList.add('cursor-hover');
+                  this.cursorFollower.classList.add('cursor-hover');
+                  this.cursorMagnetic.classList.add('cursor-hover');
               });
               
               element.addEventListener('mouseleave', () => {
                   this.cursor.classList.remove('cursor-hover');
-                  this.cursorDot.classList.remove('cursor-hover');
+                  this.cursorFollower.classList.remove('cursor-hover');
+                  this.cursorMagnetic.classList.remove('cursor-hover');
               });
           });
       }
