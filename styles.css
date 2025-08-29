@@ -1771,7 +1771,7 @@ p {
 .floating-screen {
   position: absolute;
   width: 180px;
-  height: 100px;
+  height: 140px;
   background: white;
   border-radius: 12px;
   box-shadow: var(--shadow-lg);
@@ -2015,7 +2015,7 @@ p {
   
   .floating-screen {
     width: 160px;
-    height: 100px;
+    height: 120px;
     padding: 12px;
   }
   
