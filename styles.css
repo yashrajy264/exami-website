@@ -277,10 +277,28 @@ p {
   margin: 0 auto;
 }
 
-.nav-brand .logo {
-  font-size: var(--font-xl);
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-weight: 800;
-  color: var(--primary);
+  font-size: var(--font-xl);
+  color: var(--neutral-900);
+  text-decoration: none;
+}
+
+.nav-brand .logo {
+  transition: var(--transition);
+}
+
+.nav-brand:hover .logo {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: var(--font-xl);
+  color: var(--neutral-900);
 }
 
 .nav-links {
@@ -1302,6 +1320,15 @@ p {
   
   .mobile-menu-toggle {
     display: flex;
+  }
+  
+  .nav-brand .logo {
+    width: 100px;
+    height: 26px;
+  }
+  
+  .logo-text {
+    font-size: var(--font-lg);
   }
   
   .hero-title {
