@@ -1105,7 +1105,7 @@ p {
   padding: var(--space-sm) 0;
   color: var(--text-muted);
   position: relative;
-  padding-left: 0;
+  padding-left: 20px;
 }
 
 .solution-features li::before {
