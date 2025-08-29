@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Exami — Unified Examination Infrastructure for India</title>
-  <meta name="description" content="Exami is the first unified platform for examination infrastructure in India—across government, private, and institutional exams. Phase 1 covers the pre and post exam lifecycle from application to results. Coming soon." />
+  <meta name="description" content="Exami is the first unified platform for examination infrastructure in India—across government, private, and institutional exams. Phase 1 covers the pre and post exam lifecycle from application to results." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#1f75FF" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Exami — Assessment, Reinvented (Coming Soon)" />
@@ -50,42 +50,45 @@
         <span class="logo" aria-hidden="true">E</span>
         <span class="brand-name">Exami</span>
       </div>
-      <nav aria-label="Primary">
+      <button class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="primary-nav" aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#problems">Problems We Solve</a></li>
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#use-cases">Use Cases</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a class="cta-link" href="#waitlist">Join Waitlist</a></li>
+          <li><a href="/index.html#features" data-nav>Features</a></li>
+          <li><a href="/student.html" data-nav>Students</a></li>
+          <li><a href="/institution.html" data-nav>Institutions</a></li>
+          <li><a href="/government.html" data-nav>Government</a></li>
+          <li><a href="/vision.html" data-nav>Vision</a></li>
+          <li><a href="/about.html" data-nav>About</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" href="/index.html#survey" data-nav>Join Survey</a></li>
+          <li><a class="btn btn-ghost" href="/index.html#waitlist" data-nav>Join Waitlist</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero (minimal) -->
+    <!-- Hero -->
     <section class="section hero hero-minimal" aria-labelledby="hero-title">
+      <div class="bg-gradients" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+      </div>
       <div class="container hero-grid">
-        <div class="hero-copy" data-reveal>
+        <div class="hero-content" data-reveal>
           <h1 id="hero-title">Unified examination infrastructure for India</h1>
           <p class="subtitle">
-            Exami consolidates the fragmented exam ecosystem into one platform—across government, private bodies, and specific institutions. Phase 1 covers the pre and post exam lifecycle: from application to results.
+            Exami consolidates government, private, and institutional exams into one platform. Phase 1 streamlines the pre and post exam lifecycle—from application to results.
           </p>
-          <ul class="hero-points">
-            <li>Resilient infra for peak traffic and zero-downtime launches</li>
-            <li>Single 8‑digit Exami ID for every student—PAN‑like simplicity</li>
-            <li>Docs Drive + scanner, planner calendar, and smart notifications</li>
-          </ul>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
-            <a class="btn btn-ghost" href="#screens">See Screens</a>
+            <a class="btn btn-ghost" href="#survey">Join the Survey</a>
           </div>
+          <p class="note">Designed for peak traffic, privacy by default, and zero‑downtime launches.</p>
         </div>
-    
-        <!-- Mobile App Mockup -->
         <div class="hero-visual" role="img" aria-label="Exami mobile app mockup" data-reveal data-reveal-delay="120">
-          <div class="phone-mockup">
+          <div class="phone-mockup" data-tilt>
             <div class="phone-notch" aria-hidden="true"></div>
             <div class="phone-screen">
               <div class="screen-header">
@@ -96,19 +99,13 @@
               <div class="screen-block">
                 <h3>Application — Easy Apply</h3>
                 <ol>
-                  <li>Basics fetched from profile</li>
+                  <li>Basics from profile</li>
                   <li>Institution questions & docs</li>
-                  <li>Review & Pay</li>
+                  <li>Review & pay</li>
                 </ol>
               </div>
-              <div class="screen-block">
-                <h3>Planner</h3>
-                <p>Deadlines, admit cards, interview dates — all in one calendar.</p>
-              </div>
-              <div class="screen-block">
-                <h3>Docs Drive</h3>
-                <p>Store certificates and IDs, scan with in‑app scanner.</p>
-              </div>
+              <div class="screen-block"><h3>Planner</h3><p>Deadlines, admit cards, interviews.</p></div>
+              <div class="screen-block"><h3>Docs Drive</h3><p>Store and scan documents.</p></div>
             </div>
           </div>
         </div>
@@ -136,34 +133,40 @@
       </div>
     </section>
     
-    <!-- Features (minimal copy, product-focused) -->
+    <!-- Features -->
     <section id="features" class="section section-alt" aria-labelledby="features-title">
       <div class="container">
         <h2 id="features-title" data-reveal>Why Exami</h2>
         <div class="grid features-grid">
-          <article class="feature" data-reveal>
+          <article class="feature" data-reveal data-tilt>
+            <div class="icon" aria-hidden="true">🧩</div>
             <h3>Unified Platform</h3>
             <p>Government, private, and institution exams on one reliable platform.</p>
           </article>
-          <article class="feature" data-reveal data-reveal-delay="80">
+          <article class="feature" data-reveal data-reveal-delay="80" data-tilt>
+            <div class="icon" aria-hidden="true">🛠️</div>
             <h3>Institution Dashboard</h3>
-            <p>Create announcements, build forms with drag‑and‑drop, choose payments, publish, edit, and notify.</p>
+            <p>Create announcements, build forms with blocks, choose payments, publish, edit, and notify.</p>
           </article>
-          <article class="feature" data-reveal data-reveal-delay="160">
+          <article class="feature" data-reveal data-reveal-delay="160" data-tilt>
+            <div class="icon" aria-hidden="true">🏢</div>
             <h3>Center Management</h3>
-            <p>Link exam centers and auto‑assign by pin code or preference; manage capacity at scale.</p>
+            <p>Link exam centers and auto‑assign by pincode or preference at scale.</p>
           </article>
-          <article class="feature" data-reveal data-reveal-delay="240">
+          <article class="feature" data-reveal data-reveal-delay="240" data-tilt>
+            <div class="icon" aria-hidden="true">🎒</div>
             <h3>Student Experience</h3>
-            <p>Easy apply, planner calendar, documents, and one ID across applications.</p>
+            <p>Easy apply, planner calendar, documents, and a single 8‑digit Exami ID.</p>
           </article>
-          <article class="feature" data-reveal data-reveal-delay="320">
+          <article class="feature" data-reveal data-reveal-delay="320" data-tilt>
+            <div class="icon" aria-hidden="true">🔒</div>
             <h3>Privacy by Design</h3>
-            <p>Institutions see only submitted data; user data is purpose‑bound and protected.</p>
+            <p>Institutions see only submitted data. User data is purpose‑bound and protected.</p>
           </article>
-          <article class="feature" data-reveal data-reveal-delay="400">
+          <article class="feature" data-reveal data-reveal-delay="400" data-tilt>
+            <div class="icon" aria-hidden="true">⚡</div>
             <h3>Scalable Infra</h3>
-            <p>Designed to handle massive traffic without downtime during peak application windows.</p>
+            <p>Handles massive traffic without downtime during peak windows.</p>
           </article>
         </div>
       </div>
@@ -183,15 +186,26 @@
       </div>
     </section>
     
-    <!-- Roadmap / Phases -->
+    <!-- Roadmap (horizontal scroll-snap) -->
     <section id="roadmap" class="section section-alt" aria-labelledby="roadmap-title">
       <div class="container">
         <h2 id="roadmap-title" data-reveal>Roadmap</h2>
-        <ul class="roadmap">
-          <li data-reveal><strong>Phase 1</strong> — Application → Admit card → Results. Scorecards tied to Exami ID.</li>
-          <li data-reveal data-reveal-delay="80"><strong>Phase 2</strong> — Test center upgrades: RFID/bio entry, seat allotment, center ops system.</li>
-          <li data-reveal data-reveal-delay="160"><strong>Phase 3 (MEERA)</strong> — AI to prevent paper leak with dynamic question banks; global licensing.</li>
-        </ul>
+      </div>
+      <div class="roadmap-wrap">
+        <div class="roadmap-track" tabindex="0" aria-label="Roadmap timeline">
+          <article class="roadmap-card" data-tilt>
+            <h3>Phase 1</h3>
+            <p>Application → Admit card → Results. Scorecards tied to Exami ID.</p>
+          </article>
+          <article class="roadmap-card" data-tilt>
+            <h3>Phase 2</h3>
+            <p>Test center ops: RFID/bio entry, seat allotment, center management.</p>
+          </article>
+          <article class="roadmap-card" data-tilt>
+            <h3>Phase 3 (MEERA)</h3>
+            <p>AI to prevent paper leak with dynamic question banks; global licensing.</p>
+          </article>
+        </div>
       </div>
     </section>
     
@@ -218,6 +232,40 @@
           </div>
           <button class="btn btn-primary" type="submit">Request Early Access</button>
           <p id="form-message" role="status" aria-live="polite" class="form-message" hidden></p>
+        </form>
+      </div>
+    </section>
+    <!-- Survey -->
+    <section id="survey" class="section" aria-labelledby="survey-title">
+      <div class="container">
+        <h2 id="survey-title" data-reveal>Join the survey</h2>
+        <p class="subtitle" data-reveal data-reveal-delay="80">Help us shape Exami. Share your needs as a student or an institution.</p>
+        <form id="survey-form" novalidate data-reveal data-reveal-delay="120">
+          <div class="grid survey-grid">
+            <div class="form-row">
+              <label for="survey_name">Name</label>
+              <input id="survey_name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-row">
+              <label for="survey_email">Email</label>
+              <input id="survey_email" name="email" type="email" inputmode="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-row">
+              <label for="survey_role">I am a</label>
+              <select id="survey_role" name="role" required>
+                <option value="">Select one</option>
+                <option value="student">Student</option>
+                <option value="institution">Institution</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-row form-row-full">
+              <label for="survey_feedback">What problems should Exami solve for you?</label>
+              <textarea id="survey_feedback" name="feedback" rows="4" placeholder="Tell us your biggest pain points..." required></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit Survey</button>
+          <p id="survey-message" role="status" aria-live="polite" class="form-message" hidden></p>
         </form>
       </div>
     </section>

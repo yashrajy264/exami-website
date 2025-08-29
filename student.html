@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exami — For Students</title>
+  <meta name="theme-color" content="#1f75FF" />
+  <link href="./styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-transition"></div>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand"><span class="logo" aria-hidden="true">E</span><span class="brand-name">Exami</span></div>
+      <button class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <nav id="primary-nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/index.html#features" data-nav>Features</a></li>
+          <li><a href="/student.html" data-nav>Students</a></li>
+          <li><a href="/institution.html" data-nav>Institutions</a></li>
+          <li><a href="/government.html" data-nav>Government</a></li>
+          <li><a href="/vision.html" data-nav>Vision</a></li>
+          <li><a href="/about.html" data-nav>About</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" href="/index.html#survey" data-nav>Join Survey</a></li>
+          <li><a class="btn btn-ghost" href="/index.html#waitlist" data-nav>Join Waitlist</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section hero hero-minimal" aria-labelledby="title">
+      <div class="bg-gradients" aria-hidden="true"><span class="blob blob-1"></span><span class="blob blob-2"></span></div>
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <h1 id="title">For Students</h1>
+          <p class="subtitle">One Exami ID for all applications. Planner, Docs Drive + scanner, and real‑time notifications.</p>
+        </div>
+        <div class="hero-visual" data-reveal data-reveal-delay="120">
+          <div class="phone-mockup" data-tilt>
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="screen-block"><h3>Exami ID</h3><p>8‑digit PAN‑like ID reused across institutions.</p></div>
+              <div class="screen-block"><h3>Planner</h3><p>Deadlines, admit cards, interviews in one calendar.</p></div>
+              <div class="screen-block"><h3>Docs Drive</h3><p>Store/scan your documents for easy apply.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="benefits">
+      <div class="container">
+        <h2 id="benefits" data-reveal>What you get</h2>
+        <div class="bento-grid">
+          <article class="bento-card bento-a" data-reveal data-tilt><h3>Easy Apply</h3><p>3‑step flow: basics → docs → review & pay.</p></article>
+          <article class="bento-card bento-b" data-reveal data-tilt><h3>Track Everything</h3><p>Admit cards, updates, results in one place.</p></article>
+          <article class="bento-card bento-c" data-reveal data-tilt><h3>Privacy</h3><p>Your data is purpose‑bound and protected.</p></article>
+          <article class="bento-card bento-d" data-reveal data-tilt><h3>Centers</h3><p>Get assigned by pincode or preference.</p></article>
+          <article class="bento-card bento-e" data-reveal data-tilt><h3>Docs Drive</h3><p>Link Google or use Exami’s secure drive.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Exami. All rights reserved.</p>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="/index.html#features" data-nav>Features</a></li>
+          <li><a href="/index.html#waitlist" data-nav>Waitlist</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
