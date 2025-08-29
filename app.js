@@ -158,6 +158,26 @@
     });
   }
 
+  // Spotlight glow on hover for cards (follows cursor)
+  // Respects reduced-motion by disabling dynamic updates
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const spotlightTargets = document.querySelectorAll('.feature, .screen-card, .roadmap-card, .bento-card');
+  if (spotlightTargets.length) {
+    spotlightTargets.forEach(card => {
+      const update = (e) => {
+        if (prefersReduced) return;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        // use px to support gradient positioned by pixels
+        card.style.setProperty('--mx', x + 'px');
+        card.style.setProperty('--my', y + 'px');
+      };
+      card.addEventListener('pointermove', update);
+      card.addEventListener('pointerenter', update);
+    });
+  }
+
   // Survey form handling
   const surveyForm = document.getElementById('survey-form');
   const surveyMsg = document.getElementById('survey-message');
