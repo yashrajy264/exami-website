@@ -7,72 +7,513 @@
   <meta name="theme-color" content="#1f75FF" />
   <link href="./styles.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <div class="page-transition"></div>
-  <header class="site-header">
-    <div class="container nav">
-      <div class="brand"><span class="logo" aria-hidden="true">E</span><span class="brand-name">Exami</span></div>
-      <button class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      <nav id="primary-nav" aria-label="Primary">
-        <ul class="nav-links">
-          <li><a href="/index.html#features" data-nav>Features</a></li>
-          <li><a href="/student.html" data-nav>Students</a></li>
-          <li><a href="/institution.html" data-nav>Institutions</a></li>
-          <li><a href="/government.html" data-nav>Government</a></li>
-          <li><a href="/vision.html" data-nav>Vision</a></li>
-          <li><a href="/about.html" data-nav>About</a></li>
-          <li class="nav-cta"><a class="btn btn-primary" href="/index.html#survey" data-nav>Join Survey</a></li>
-          <li><a class="btn btn-ghost" href="/index.html#waitlist" data-nav>Join Waitlist</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="section hero hero-minimal" aria-labelledby="title">
-      <div class="bg-gradients" aria-hidden="true"><span class="blob blob-1"></span><span class="blob blob-2"></span></div>
-      <div class="container hero-grid">
-        <div class="hero-copy" data-reveal>
-          <h1 id="title">For Students</h1>
-          <p class="subtitle">One Exami ID for all applications. Planner, Docs Drive + scanner, and real‑time notifications.</p>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <div class="brand-logo">E</div>
+        <span class="brand-name">Exami</span>
+      </div>
+      
+      <div class="nav-links">
+        <a href="./index.html#features" class="nav-link">Features</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-trigger">Solutions</a>
+          <div class="dropdown-menu">
+            <a href="./student.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon"><span class="material-icons">school</span></div>
+              <div>
+                <div class="dropdown-title">For Students</div>
+                <div class="dropdown-desc">Enhanced learning experience</div>
+              </div>
+            </a>
+            <a href="./institution.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon"><span class="material-icons">business</span></div>
+              <div>
+                <div class="dropdown-title">For Institutions</div>
+                <div class="dropdown-desc">Streamlined administration</div>
+              </div>
+            </a>
+            <a href="./government.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon"><span class="material-icons">account_balance</span></div>
+              <div>
+                <div class="dropdown-title">For Government</div>
+                <div class="dropdown-desc">Policy & compliance tools</div>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="hero-visual" data-reveal data-reveal-delay="120">
-          <div class="phone-mockup" data-tilt>
-            <div class="phone-notch" aria-hidden="true"></div>
-            <div class="phone-screen">
-              <div class="screen-block"><h3>Exami ID</h3><p>8‑digit PAN‑like ID reused across institutions.</p></div>
-              <div class="screen-block"><h3>Planner</h3><p>Deadlines, admit cards, interviews in one calendar.</p></div>
-              <div class="screen-block"><h3>Docs Drive</h3><p>Store/scan your documents for easy apply.</p></div>
+        <a href="./about.html" class="nav-link" data-nav>Our Story</a>
+        <a href="./about.html" class="nav-link" data-nav>About</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="btn btn-primary">Take Survey</button>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge" data-reveal>
+          <span class="badge-dot"></span>
+          For Students
+        </div>
+        
+        <h1 class="hero-title" data-reveal data-reveal-delay="100">
+          One ID, All Exams<br>
+          <span class="gradient-text">Simplified Forever</span>
+        </h1>
+        
+        <p class="hero-subtitle" data-reveal data-reveal-delay="200">
+          Get your unique 8-digit Exami ID and apply to any examination across India with our 3-step process. Store documents, track applications, and never miss important dates.
+        </p>
+        
+        <div class="hero-actions" data-reveal data-reveal-delay="300">
+          <button class="btn btn-primary btn-lg">
+            <span class="material-icons">person_add</span>
+            Get Your Exami ID
+          </button>
+          <button class="btn btn-ghost btn-lg">
+            <span class="material-icons">play_circle</span>
+            Watch Demo
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual" data-reveal data-reveal-delay="400">
+        <div class="phone-mockup" data-tilt>
+          <div class="phone-screen">
+            <div class="app-header">
+              <div class="status-bar">
+                <span>9:41</span>
+                <div class="signal-icons">
+                  <span class="wifi"></span>
+                  <span class="battery"></span>
+                </div>
+              </div>
+              <div class="app-nav">
+                <span class="app-title">Exami</span>
+                <span class="material-icons">notifications</span>
+              </div>
+            </div>
+            <div class="app-content">
+              <div class="exami-id-card">
+                <div class="id-header">Your Exami ID</div>
+                <div class="id-number">EX24A7B9</div>
+                <div class="id-status">✓ Verified</div>
+              </div>
+              <div class="quick-actions">
+                <div class="action-item">
+                  <span class="material-icons">assignment</span>
+                  <span>Apply Now</span>
+                </div>
+                <div class="action-item">
+                  <span class="material-icons">folder</span>
+                  <span>My Docs</span>
+                </div>
+                <div class="action-item">
+                  <span class="material-icons">calendar_today</span>
+                  <span>Schedule</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" aria-labelledby="benefits">
-      <div class="container">
-        <h2 id="benefits" data-reveal>What you get</h2>
-        <div class="bento-grid">
-          <article class="bento-card bento-a" data-reveal data-tilt><h3>Easy Apply</h3><p>3‑step flow: basics → docs → review & pay.</p></article>
-          <article class="bento-card bento-b" data-reveal data-tilt><h3>Track Everything</h3><p>Admit cards, updates, results in one place.</p></article>
-          <article class="bento-card bento-c" data-reveal data-tilt><h3>Privacy</h3><p>Your data is purpose‑bound and protected.</p></article>
-          <article class="bento-card bento-d" data-reveal data-tilt><h3>Centers</h3><p>Get assigned by pincode or preference.</p></article>
-          <article class="bento-card bento-e" data-reveal data-tilt><h3>Docs Drive</h3><p>Link Google or use Exami’s secure drive.</p></article>
+  <!-- Features Bento Grid -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">Everything You Need</h2>
+        <p class="section-subtitle">From application to results, we've got you covered</p>
+      </div>
+      
+      <div class="bento-grid" data-reveal data-reveal-delay="200">
+        <div class="bento-item large" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🆔</div>
+            <h3 class="bento-title">Universal Exami ID</h3>
+            <p class="bento-description">One 8-digit alphanumeric ID for all examinations across India. No more creating multiple accounts or remembering different credentials.</p>
+            <div class="id-demo">
+              <div class="demo-id">EX24A7B9</div>
+              <div class="demo-text">Works everywhere</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bento-item medium-1" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">📱</div>
+            <h3 class="bento-title">Mobile App</h3>
+            <p class="bento-description">Native mobile experience with offline capabilities and push notifications.</p>
+          </div>
+        </div>
+        
+        <div class="bento-item small-1" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🔒</div>
+            <h3 class="bento-title">Privacy First</h3>
+            <p class="bento-description">Your data is encrypted and only shared with institutions you apply to.</p>
+          </div>
+        </div>
+        
+        <div class="bento-item medium-2" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">📄</div>
+            <h3 class="bento-title">Document Scanner</h3>
+            <p class="bento-description">Built-in scanner with AI-powered document recognition and cloud storage.</p>
+          </div>
+        </div>
+        
+        <div class="bento-item small-2" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">📅</div>
+            <h3 class="bento-title">Smart Calendar</h3>
+            <p class="bento-description">Never miss deadlines with automated reminders and exam schedules.</p>
+          </div>
+        </div>
+        
+        <div class="bento-item wide" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">⚡</div>
+            <h3 class="bento-title">3-Step Application Process</h3>
+            <p class="bento-description">LinkedIn Easy Apply style process: Basic info → Additional requirements → Review & Payment</p>
+            <div class="process-flow">
+              <div class="step-node active">
+                <span class="step-number">1</span>
+                <span class="step-label">Basic Info</span>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="step-node">
+                <span class="step-number">2</span>
+                <span class="step-label">Documents</span>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="step-node">
+                <span class="step-number">3</span>
+                <span class="step-label">Review & Pay</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Exami. All rights reserved.</p>
-      <nav aria-label="Footer">
-        <ul class="footer-links">
-          <li><a href="/index.html#features" data-nav>Features</a></li>
-          <li><a href="/index.html#waitlist" data-nav>Waitlist</a></li>
-        </ul>
-      </nav>
+  <!-- How It Works Accordion -->
+  <section class="how-it-works-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">How Exami Works for Students</h2>
+        <p class="section-subtitle">Step-by-step guide to your examination journey</p>
+      </div>
+      
+      <div class="accordion-container" data-reveal data-reveal-delay="200">
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>1. Create Your Exami ID</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Sign up once and get your unique 8-digit Exami ID. Complete your profile with basic information that will be auto-filled for all future applications.</p>
+              <div class="feature-highlights">
+                <div class="highlight-item">
+                  <span class="material-icons">verified_user</span>
+                  <span>Verified Identity</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">security</span>
+                  <span>Secure Profile</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">speed</span>
+                  <span>Quick Setup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>2. Store Your Documents</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Use our in-app drive to store all your documents securely. Link your Google account or use Exami's secure cloud storage with built-in document scanner.</p>
+              <div class="feature-highlights">
+                <div class="highlight-item">
+                  <span class="material-icons">cloud_upload</span>
+                  <span>Cloud Storage</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">scanner</span>
+                  <span>AI Scanner</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">integration_instructions</span>
+                  <span>Google Drive Sync</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>3. Apply in 3 Simple Steps</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Our LinkedIn Easy Apply-style process makes applications effortless. Your basic info is pre-filled, you only add institution-specific requirements, then review and pay.</p>
+              <div class="application-demo">
+                <div class="demo-step">
+                  <div class="step-icon">1</div>
+                  <div class="step-content">
+                    <h4>Basic Information</h4>
+                    <p>Auto-filled from your profile</p>
+                  </div>
+                </div>
+                <div class="demo-step">
+                  <div class="step-icon">2</div>
+                  <div class="step-content">
+                    <h4>Additional Requirements</h4>
+                    <p>Institution-specific questions & documents</p>
+                  </div>
+                </div>
+                <div class="demo-step">
+                  <div class="step-icon">3</div>
+                  <div class="step-content">
+                    <h4>Review & Payment</h4>
+                    <p>Confirm details and complete payment</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>4. Track Everything in One Place</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Use the planner-style calendar to track all your applications, deadlines, admit cards, and results. Create custom events for revision schedules and important dates.</p>
+              <div class="calendar-preview">
+                <div class="calendar-header">
+                  <span class="material-icons">calendar_today</span>
+                  <span>Your Exam Calendar</span>
+                </div>
+                <div class="calendar-events">
+                  <div class="event-item">
+                    <div class="event-date">Dec 15</div>
+                    <div class="event-details">
+                      <div class="event-title">JEE Main Application Deadline</div>
+                      <div class="event-type">Application</div>
+                    </div>
+                  </div>
+                  <div class="event-item">
+                    <div class="event-date">Dec 20</div>
+                    <div class="event-details">
+                      <div class="event-title">NEET Admit Card Release</div>
+                      <div class="event-type">Admit Card</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>5. Get Assigned Test Centers</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Institutions can assign test centers based on your pincode or preferences. No more traveling far distances or dealing with inconvenient locations.</p>
+              <div class="center-assignment">
+                <div class="assignment-option">
+                  <span class="material-icons">location_on</span>
+                  <div>
+                    <h4>By Pincode</h4>
+                    <p>Automatic assignment to nearest center</p>
+                  </div>
+                </div>
+                <div class="assignment-option">
+                  <span class="material-icons">tune</span>
+                  <div>
+                    <h4>By Preference</h4>
+                    <p>Choose from available centers</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">Why Students Choose Exami</h2>
+        <p class="section-subtitle">Join thousands of students who've simplified their exam journey</p>
+      </div>
+      
+      <div class="benefits-grid" data-reveal data-reveal-delay="200">
+        <div class="benefit-card" data-tilt>
+          <div class="benefit-icon">⚡</div>
+          <h3 class="benefit-title">Lightning Fast Applications</h3>
+          <p class="benefit-description">Apply to multiple exams in minutes, not hours. Our 3-step process eliminates repetitive form filling.</p>
+          <div class="benefit-stat">
+            <span class="stat-number">90%</span>
+            <span class="stat-label">Faster Applications</span>
+          </div>
+        </div>
+        
+        <div class="benefit-card" data-tilt>
+          <div class="benefit-icon">🔐</div>
+          <h3 class="benefit-title">Complete Privacy Control</h3>
+          <p class="benefit-description">Your data is only shared with institutions you apply to. We can't access your personal information.</p>
+          <div class="benefit-stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Data Privacy</span>
+          </div>
+        </div>
+        
+        <div class="benefit-card" data-tilt>
+          <div class="benefit-icon">📱</div>
+          <h3 class="benefit-title">Mobile-First Experience</h3>
+          <p class="benefit-description">Apply, track, and manage everything from your phone. Works offline and syncs when connected.</p>
+          <div class="benefit-stat">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Access Anywhere</span>
+          </div>
+        </div>
+        
+        <div class="benefit-card" data-tilt>
+          <div class="benefit-icon">🎯</div>
+          <h3 class="benefit-title">Never Miss Deadlines</h3>
+          <p class="benefit-description">Smart notifications and calendar integration ensure you never miss important dates or updates.</p>
+          <div class="benefit-stat">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Missed Deadlines</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-reveal>
+        <h2 class="cta-title">Ready to Simplify Your Exam Journey?</h2>
+        <p class="cta-subtitle">Join the waitlist and be among the first to get your Exami ID when we launch</p>
+        
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg">
+            <span class="material-icons">person_add</span>
+            Join Waitlist
+          </button>
+          <button class="btn btn-ghost btn-lg">
+            <span class="material-icons">quiz</span>
+            Take Survey
+          </button>
+        </div>
+        
+        <div class="cta-features">
+          <div class="cta-feature">
+            <span class="material-icons">verified</span>
+            <span>Free Forever</span>
+          </div>
+          <div class="cta-feature">
+            <span class="material-icons">security</span>
+            <span>Secure & Private</span>
+          </div>
+          <div class="cta-feature">
+            <span class="material-icons">support</span>
+            <span>24/7 Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">Exami</div>
+          <p class="footer-tagline">Revolutionizing examination infrastructure in India</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4 class="footer-title">Product</h4>
+            <a href="#features" class="footer-link">Features</a>
+            <a href="#pricing" class="footer-link">Pricing</a>
+            <a href="./about.html" class="footer-link" data-nav>About</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4 class="footer-title">Solutions</h4>
+            <a href="./student.html" class="footer-link" data-nav>For Students</a>
+            <a href="./institution.html" class="footer-link" data-nav>For Institutions</a>
+            <a href="./government.html" class="footer-link" data-nav>For Government</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4 class="footer-title">Support</h4>
+            <a href="#" class="footer-link">Documentation</a>
+            <a href="#" class="footer-link">Help Center</a>
+            <a href="#" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Status</a>
+          </div>
+          
+          <div class="footer-column">
+            <h4 class="footer-title">Legal</h4>
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Terms</a>
+            <a href="#" class="footer-link">Security</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© <span id="year">2024</span> Exami. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
