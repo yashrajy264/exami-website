@@ -288,7 +288,10 @@ p {
 }
 
 .nav-brand .logo {
+  width: 40px;
+  height: 32px;
   transition: var(--transition);
+  flex-shrink: 0;
 }
 
 .nav-brand:hover .logo {
@@ -1323,8 +1326,8 @@ p {
   }
   
   .nav-brand .logo {
-    width: 100px;
-    height: 26px;
+    width: 36px;
+    height: 28px;
   }
   
   .logo-text {
