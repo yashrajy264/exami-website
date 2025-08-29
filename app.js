@@ -255,8 +255,8 @@
       submitBtn.disabled = true;
       
       setTimeout(() => {
-        submitBtn.innerHTML = '<span class="material-icons">check</span> Joined!';
-        setTimeout(() => {
+                submitBtn.textContent = 'Joined!';
+                setTimeout(() => {
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
           earlyAccessForm.reset();

@@ -881,13 +881,12 @@ p {
 }
 
 .bento-icon {
-  font-size: var(--font-3xl);
-  margin-bottom: var(--space-lg);
-  display: block;
+  display: none;
 }
 
 .bento-title {
   margin-bottom: var(--space-md);
+  margin-top: 0;
 }
 
 .bento-description {
@@ -1081,15 +1080,16 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .solution-icon {
-  font-size: var(--font-2xl);
+  display: none;
 }
 
 .solution-title {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
 }
 
 .solution-description {
@@ -1104,6 +1104,17 @@ p {
 .solution-features li {
   padding: var(--space-sm) 0;
   color: var(--text-muted);
+  position: relative;
+  padding-left: 0;
+}
+
+.solution-features li::before {
+  content: '•';
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  margin-right: 8px;
 }
 
 .solution-link {
@@ -1814,6 +1825,8 @@ p {
   font-size: 10px;
   padding: 4px 8px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
 
 .status-item.completed {
@@ -1838,6 +1851,9 @@ p {
   background: var(--gray-50);
   border-radius: 6px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .notification-list {
