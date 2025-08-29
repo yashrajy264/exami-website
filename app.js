@@ -356,6 +356,9 @@
   class CustomCursor {
       constructor() {
           this.cursor = null;
+          this.mouseX = 0;
+          this.mouseY = 0;
+          this.isMoving = false;
           this.init();
       }
   
@@ -367,14 +370,18 @@
               console.warn('Cursor element not found');
               return;
           }
-  
-          // Mouse move handler with proper positioning
-          this.handleMouseMove = (e) => {
-              this.cursor.style.left = e.clientX + 'px';
-              this.cursor.style.top = e.clientY + 'px';
-          };
-  
-          document.addEventListener('mousemove', this.handleMouseMove);
+
+          // Initialize cursor position
+          this.cursor.style.opacity = '0';
+          
+          // Throttled mouse move handler for better performance
+          this.handleMouseMove = this.throttle((e) => {
+              this.mouseX = e.clientX;
+              this.mouseY = e.clientY;
+              this.updateCursorPosition();
+          }, 16); // ~60fps
+
+          document.addEventListener('mousemove', this.handleMouseMove, { passive: true });
           
           // Show cursor when mouse enters the page
           document.addEventListener('mouseenter', () => {
@@ -385,6 +392,27 @@
           document.addEventListener('mouseleave', () => {
               this.cursor.style.opacity = '0';
           });
+      }
+
+      updateCursorPosition() {
+          if (!this.cursor) return;
+          
+          // Use transform for better performance
+          this.cursor.style.transform = `translate(${this.mouseX - 4}px, ${this.mouseY - 4}px)`;
+      }
+
+      // Throttle function to limit function calls
+      throttle(func, limit) {
+          let inThrottle;
+          return function() {
+              const args = arguments;
+              const context = this;
+              if (!inThrottle) {
+                  func.apply(context, args);
+                  inThrottle = true;
+                  setTimeout(() => inThrottle = false, limit);
+              }
+          }
       }
   }
   
