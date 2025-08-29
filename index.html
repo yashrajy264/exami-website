@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exami — Assessment, Reinvented (Coming Soon)</title>
-  <meta name="description" content="Exami helps teams create, deliver, and analyze assessments faster with AI. Generate questions, auto-grade, and get deep insights. Coming soon." />
+  <title>Exami — Unified Examination Infrastructure for India</title>
+  <meta name="description" content="Exami is the first unified platform for examination infrastructure in India—across government, private, and institutional exams. Phase 1 covers the pre and post exam lifecycle from application to results. Coming soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#0f172a" />
 
   <!-- Open Graph -->
@@ -61,176 +64,143 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="section hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero-content">
-          <h1 id="hero-title">Assessment, reinvented with AI</h1>
+    <!-- Hero (minimal) -->
+    <section class="section hero hero-minimal" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <h1 id="hero-title">Unified examination infrastructure for India</h1>
           <p class="subtitle">
-            Exami helps you create better questions faster, auto-grade at scale, and surface actionable insights.
-            Streamline assessment workflows for education and hiring. Coming soon.
+            Exami consolidates the fragmented exam ecosystem into one platform—across government, private bodies, and specific institutions. Phase 1 covers the pre and post exam lifecycle: from application to results.
           </p>
+          <ul class="hero-points">
+            <li>Resilient infra for peak traffic and zero-downtime launches</li>
+            <li>Single 8‑digit Exami ID for every student—PAN‑like simplicity</li>
+            <li>Docs Drive + scanner, planner calendar, and smart notifications</li>
+          </ul>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
-            <a class="btn btn-ghost" href="#features">See Features</a>
+            <a class="btn btn-ghost" href="#screens">See Screens</a>
           </div>
-          <p class="note">Private beta opening soon — limited spots.</p>
         </div>
-        <div class="hero-visual" role="img" aria-label="Abstract assessment dashboard preview">
-          <div class="card">
-            <div class="card-row">
-              <div class="pill pill-green"></div>
-              <div class="pill pill-amber"></div>
-              <div class="pill pill-slate"></div>
+    
+        <!-- Mobile App Mockup -->
+        <div class="hero-visual" role="img" aria-label="Exami mobile app mockup" data-reveal data-reveal-delay="120">
+          <div class="phone-mockup">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="screen-header">
+                <div class="dot dot-green"></div>
+                <div class="dot dot-amber"></div>
+                <div class="dot dot-slate"></div>
+              </div>
+              <div class="screen-block">
+                <h3>Application — Easy Apply</h3>
+                <ol>
+                  <li>Basics fetched from profile</li>
+                  <li>Institution questions & docs</li>
+                  <li>Review & Pay</li>
+                </ol>
+              </div>
+              <div class="screen-block">
+                <h3>Planner</h3>
+                <p>Deadlines, admit cards, interview dates — all in one calendar.</p>
+              </div>
+              <div class="screen-block">
+                <h3>Docs Drive</h3>
+                <p>Store certificates and IDs, scan with in‑app scanner.</p>
+              </div>
             </div>
-            <div class="bars">
-              <span style="width: 88%"></span>
-              <span style="width: 64%"></span>
-              <span style="width: 42%"></span>
-              <span style="width: 72%"></span>
-            </div>
-            <div class="sparkles" aria-hidden="true">✦ ✧ ✦</div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Features -->
-    <section id="features" class="section" aria-labelledby="features-title">
+    
+    <!-- Screens strip -->
+    <section id="screens" class="section screens" aria-labelledby="screens-title">
       <div class="container">
-        <h2 id="features-title">What you can do with Exami</h2>
+        <h2 id="screens-title" data-reveal>Built for both students and institutions</h2>
+        <div class="grid screen-grid">
+          <article class="screen-card" data-reveal>
+            <h3>Pre & Post Exam Flow</h3>
+            <p>From announcement to application and results. Admit cards, notifications, and scorecards included.</p>
+          </article>
+          <article class="screen-card" data-reveal data-reveal-delay="100">
+            <h3>Single Exami ID</h3>
+            <p>Every student gets one 8‑digit alphanumeric ID to apply across multiple institutions without friction.</p>
+          </article>
+          <article class="screen-card" data-reveal data-reveal-delay="200">
+            <h3>Docs Drive & Scanner</h3>
+            <p>Link Google or let Exami manage a secure drive for verified documents and quick uploads.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Features (minimal copy, product-focused) -->
+    <section id="features" class="section section-alt" aria-labelledby="features-title">
+      <div class="container">
+        <h2 id="features-title" data-reveal>Why Exami</h2>
         <div class="grid features-grid">
-          <article class="feature">
-            <div class="icon" aria-hidden="true">🧠</div>
-            <h3>AI Question Generation</h3>
-            <p>Generate high-quality questions aligned to skills and learning objectives with guardrails.</p>
+          <article class="feature" data-reveal>
+            <h3>Unified Platform</h3>
+            <p>Government, private, and institution exams on one reliable platform.</p>
           </article>
-          <article class="feature">
-            <div class="icon" aria-hidden="true">⚖️</div>
-            <h3>Auto-Grading</h3>
-            <p>Instant, consistent grading for objective and free-text responses with transparent rubrics.</p>
+          <article class="feature" data-reveal data-reveal-delay="80">
+            <h3>Institution Dashboard</h3>
+            <p>Create announcements, build forms with drag‑and‑drop, choose payments, publish, edit, and notify.</p>
           </article>
-          <article class="feature">
-            <div class="icon" aria-hidden="true">📊</div>
-            <h3>Deep Analytics</h3>
-            <p>Spot concept gaps, difficulty trends, and fairness metrics to improve your assessments.</p>
+          <article class="feature" data-reveal data-reveal-delay="160">
+            <h3>Center Management</h3>
+            <p>Link exam centers and auto‑assign by pin code or preference; manage capacity at scale.</p>
           </article>
-          <article class="feature">
-            <div class="icon" aria-hidden="true">🔐</div>
-            <h3>Integrity & Proctoring</h3>
-            <p>Flexible integrity options designed to reduce friction while maintaining trust.</p>
+          <article class="feature" data-reveal data-reveal-delay="240">
+            <h3>Student Experience</h3>
+            <p>Easy apply, planner calendar, documents, and one ID across applications.</p>
           </article>
-          <article class="feature">
-            <div class="icon" aria-hidden="true">🔌</div>
-            <h3>Integrations</h3>
-            <p>Connect with LMS and HRIS tools to fit your existing workflows.</p>
+          <article class="feature" data-reveal data-reveal-delay="320">
+            <h3>Privacy by Design</h3>
+            <p>Institutions see only submitted data; user data is purpose‑bound and protected.</p>
           </article>
-          <article class="feature">
-            <div class="icon" aria-hidden="true">⚡</div>
-            <h3>Scalable Delivery</h3>
-            <p>Deliver assessments globally with low-latency, mobile-friendly experiences.</p>
+          <article class="feature" data-reveal data-reveal-delay="400">
+            <h3>Scalable Infra</h3>
+            <p>Designed to handle massive traffic without downtime during peak application windows.</p>
           </article>
         </div>
       </div>
     </section>
-
-    <!-- Problems We Solve -->
-    <section id="problems" class="section section-alt" aria-labelledby="problems-title">
-      <div class="container">
-        <h2 id="problems-title">Problems we solve</h2>
-        <ul class="problem-list">
-          <li>Manual question authoring is slow and inconsistent</li>
-          <li>Limited insights into learning outcomes and skill gaps</li>
-          <li>Bias and inconsistency in grading at scale</li>
-          <li>Fragmented tools that don’t integrate with existing systems</li>
-          <li>High effort to maintain assessment integrity without hurting UX</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- How It Works -->
+    
+    <!-- Institutions flow -->
     <section id="how" class="section" aria-labelledby="how-title">
       <div class="container">
-        <h2 id="how-title">How it works</h2>
+        <h2 id="how-title" data-reveal>For institutions — create, publish, manage</h2>
         <ol class="how-steps">
-          <li>
-            <strong>Author</strong> — Start with your objectives or a syllabus. Exami suggests question pools with clear rubrics.
-          </li>
-          <li>
-            <strong>Deliver</strong> — Share a link or integrate with your LMS/HRIS. Secure, accessible, mobile-friendly.
-          </li>
-          <li>
-            <strong>Analyze</strong> — Get immediate analytics and insights to iterate quickly and improve outcomes.
-          </li>
+          <li data-reveal>Announce exam → fill details → attach policy docs</li>
+          <li data-reveal data-reveal-delay="80">Create the application form with blocks (fields, uploads, validations)</li>
+          <li data-reveal data-reveal-delay="160">Pick payment methods and fees</li>
+          <li data-reveal data-reveal-delay="240">Link exam centers (capacity, pin code rules)</li>
+          <li data-reveal data-reveal-delay="320">Publish. Push notifications to relevant candidates</li>
         </ol>
       </div>
     </section>
-
-    <!-- Use Cases -->
-    <section id="use-cases" class="section section-alt" aria-labelledby="use-cases-title">
-      <div class="container">
-        <h2 id="use-cases-title">Use cases</h2>
-        <div class="grid use-cases-grid">
-          <article>
-            <h3>Higher Education</h3>
-            <p>Create fair, scalable assessments and measure learning outcomes across cohorts.</p>
-          </article>
-          <article>
-            <h3>Bootcamps</h3>
-            <p>Iterate quickly with data-driven insights to keep pace with evolving curricula.</p>
-          </article>
-          <article>
-            <h3>Hiring</h3>
-            <p>Evaluate skills consistently with role-aligned assessments and structured rubrics.</p>
-          </article>
-          <article>
-            <h3>Certification</h3>
-            <p>Secure, reliable delivery with detailed reporting for compliance and stakeholders.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="section" aria-labelledby="testimonials-title">
-      <div class="container">
-        <h2 id="testimonials-title">What early users say</h2>
-        <div class="grid testimonials-grid">
-          <figure>
-            <blockquote>
-              “Exami cut our assessment creation time in half while improving quality.”
-            </blockquote>
-            <figcaption>Program Director, Tech Education</figcaption>
-          </figure>
-          <figure>
-            <blockquote>
-              “Auto-grading with transparent rubrics has been a game-changer for our hiring process.”
-            </blockquote>
-            <figcaption>Head of Talent, SaaS</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Roadmap / Coming Soon -->
+    
+    <!-- Roadmap / Phases -->
     <section id="roadmap" class="section section-alt" aria-labelledby="roadmap-title">
       <div class="container">
-        <h2 id="roadmap-title">Roadmap</h2>
+        <h2 id="roadmap-title" data-reveal>Roadmap</h2>
         <ul class="roadmap">
-          <li><strong>Private Beta</strong> — Early access for select partners</li>
-          <li><strong>LMS Integrations</strong> — Canvas, Moodle, Google Classroom</li>
-          <li><strong>Advanced Analytics</strong> — Concept mastery, item analysis, fairness</li>
-          <li><strong>Enterprise</strong> — SSO, audit logs, data residency options</li>
+          <li data-reveal><strong>Phase 1</strong> — Application → Admit card → Results. Scorecards tied to Exami ID.</li>
+          <li data-reveal data-reveal-delay="80"><strong>Phase 2</strong> — Test center upgrades: RFID/bio entry, seat allotment, center ops system.</li>
+          <li data-reveal data-reveal-delay="160"><strong>Phase 3 (MEERA)</strong> — AI to prevent paper leak with dynamic question banks; global licensing.</li>
         </ul>
       </div>
     </section>
-
-    <!-- Waitlist -->
+    
+    <!-- Waitlist (unchanged form behavior) -->
     <section id="waitlist" class="section waitlist" aria-labelledby="waitlist-title">
       <div class="container">
-        <h2 id="waitlist-title">Join the waitlist</h2>
-        <p>Get early access and product updates. No spam, unsubscribe anytime.</p>
-        <form id="waitlist-form" novalidate>
+        <h2 id="waitlist-title" data-reveal>Join the waitlist</h2>
+        <p data-reveal data-reveal-delay="80">Get early access and product updates. No spam, unsubscribe anytime.</p>
+        <form id="waitlist-form" novalidate data-reveal data-reveal-delay="120">
           <div class="form-row">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" inputmode="email" placeholder="you@example.com" required aria-required="true" />

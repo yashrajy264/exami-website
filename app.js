@@ -63,4 +63,22 @@
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.style.scrollBehavior = 'auto';
   }
+
+  // On-scroll reveal animations
+  const revealItems = document.querySelectorAll('[data-reveal]');
+  if (revealItems.length) {
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
+          setTimeout(() => {
+            el.classList.add('reveal-visible');
+          }, delay);
+          io.unobserve(el);
+        }
+      }
+    }, { threshold: 0.12 });
+    revealItems.forEach(el => io.observe(el));
+  }
 })();
