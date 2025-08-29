@@ -169,7 +169,6 @@
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        // use px to support gradient positioned by pixels
         card.style.setProperty('--mx', x + 'px');
         card.style.setProperty('--my', y + 'px');
       };
@@ -177,6 +176,52 @@
       card.addEventListener('pointerenter', update);
     });
   }
+
+  // Animated counters for metrics
+  (function initCounters(){
+    const counters = document.querySelectorAll('[data-counter]');
+    if (!counters.length) return;
+
+    const animate = (el) => {
+      const to = parseFloat(el.getAttribute('data-count-to') || '0');
+      const duration = parseInt(el.getAttribute('data-duration') || '1200', 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      if (prefersReduced || duration <= 0) {
+        el.textContent = format(to) + suffix;
+        return;
+      }
+
+      const start = performance.now();
+      const from = 0;
+      const step = (now) => {
+        const t = Math.min(1, (now - start) / duration);
+        // easeOutCubic
+        const eased = 1 - Math.pow(1 - t, 3);
+        const current = from + (to - from) * eased;
+        el.textContent = format(current) + suffix;
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const format = (n) => {
+      // 1200 -> 1,200 ; 250000 -> 250,000
+      const rounded = n >= 100 ? Math.round(n) : Math.round(n * 10) / 10;
+      return rounded.toLocaleString();
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          animate(el);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(el => io.observe(el));
+  })();
 
   // Survey form handling
   const surveyForm = document.getElementById('survey-form');
