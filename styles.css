@@ -272,9 +272,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-md) var(--space-lg);
+  padding: 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 70px;
 }
 
 .nav-brand {
@@ -288,14 +289,14 @@ p {
 }
 
 .nav-brand .logo {
-  width: 40px;
-  height: 32px;
+  width: 36px;
+  height: 28px;
   transition: var(--transition);
   flex-shrink: 0;
 }
 
 .nav-brand:hover .logo {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .logo-text {
@@ -307,7 +308,7 @@ p {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: 2rem;
 }
 
 .nav-link {
@@ -435,6 +436,7 @@ p {
   display: flex;
   align-items: center;
   padding-top: 80px;
+  padding-bottom: var(--space-2xl);
   overflow: hidden;
 }
 
@@ -768,10 +770,38 @@ p {
   color: var(--text-muted);
 }
 
-/* ===== BENTO GRID ===== */
+/* ===== SECTION SPACING FIXES ===== */
+.features-section,
+.solutions-section,
+.faq-section {
+  padding: var(--space-3xl) 0;
+}
+
+/* Ensure consistent section spacing */
+.section,
+.features-section,
+.solutions-section,
+.faq-section,
+.cta-section {
+  padding: var(--space-3xl) 0;
+}
+
+/* Add extra spacing between major sections for better visual separation */
 .features-section {
+  padding: calc(var(--space-3xl) * 1.25) 0;
   background: var(--gray-50);
 }
+
+.solutions-section {
+  padding: calc(var(--space-3xl) * 1.25) 0;
+  background: var(--gray-50);
+}
+
+.faq-section {
+  padding: calc(var(--space-3xl) * 1.25) 0;
+}
+
+/* ===== BENTO GRID ===== */
 
 .bento-grid {
   display: grid;
@@ -1316,6 +1346,20 @@ p {
 }
 
 @media (max-width: 768px) {
+  .nav-container {
+    padding: 0.75rem 1rem;
+    min-height: 60px;
+  }
+  
+  .nav-brand .logo {
+    width: 32px;
+    height: 24px;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
   .nav-links,
   .nav-actions {
     display: none;
@@ -1323,11 +1367,6 @@ p {
   
   .mobile-menu-toggle {
     display: flex;
-  }
-  
-  .nav-brand .logo {
-    width: 36px;
-    height: 28px;
   }
   
   .logo-text {
@@ -1378,6 +1417,19 @@ p {
 }
 
 @media (max-width: 480px) {
+  .nav-container {
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-brand .logo {
+    width: 28px;
+    height: 22px;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
   .container {
     padding: 0 var(--space-md);
   }
