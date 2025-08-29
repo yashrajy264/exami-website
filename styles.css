@@ -97,55 +97,16 @@ html {
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: none;
   transform: translate(-50%, -50%);
 }
 
 .cursor-follower {
-  position: fixed;
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translate(-50%, -50%);
-  opacity: 0.6;
+  display: none;
 }
 
 .cursor-magnetic {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9997;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-}
-
-/* Hover states */
-.cursor.cursor-hover {
-  width: 16px;
-  height: 16px;
-  background: #1d4ed8;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-}
-
-.cursor-follower.cursor-hover {
-  width: 48px;
-  height: 48px;
-  border-color: rgba(59, 130, 246, 0.6);
-  opacity: 0.8;
-}
-
-.cursor-magnetic.cursor-hover {
-  width: 80px;
-  height: 80px;
-  opacity: 0.3;
+  display: none;
 }
 
 /* Hide default cursor on interactive elements */
