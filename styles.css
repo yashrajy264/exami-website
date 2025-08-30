@@ -878,6 +878,11 @@ p {
 .bento-content {
   position: relative;
   z-index: 1;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .bento-icon {
@@ -885,7 +890,10 @@ p {
 }
 
 .bento-title {
-  margin-bottom: var(--space-md);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
   margin-top: 0;
 }
 
@@ -2490,9 +2498,9 @@ p {
 .benefit-card {
   background: white;
   border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 32px;
-  text-align: center;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: left;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -2527,9 +2535,9 @@ p {
 }
 
 .benefit-title {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
   color: #1a1a1a;
 }
 
@@ -2873,47 +2881,38 @@ p {
   }
 }
 
-/* ===== PLACEHOLDER STUDENT ID CARD ===== */
-.placeholder-card {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+/* ===== STUDENT ID CARD IMAGE ===== */
+.student-id-card {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   border-radius: 16px;
-  padding: 1.5rem;
-  color: white;
-  max-width: 350px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
   margin: 0 auto;
-  box-shadow: 0 8px 32px rgba(79, 70, 229, 0.3);
 }
 
-.placeholder-header {
-  font-size: 0.875rem;
-  opacity: 0.9;
-  margin-bottom: 1rem;
+.student-id-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
 }
 
-.placeholder-content {
+.id-demo {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.placeholder-photo {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.placeholder-name {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
+/* Remove placeholder styles */
+.placeholder-card,
+.placeholder-header,
+.placeholder-content,
+.placeholder-photo,
+.placeholder-name,
 .placeholder-id {
-  font-size: 1rem;
-  opacity: 0.9;
-  font-family: 'JetBrains Mono', monospace;
+  display: none !important;
 }
 
 /* ===== MATERIAL ICONS STYLING ===== */
