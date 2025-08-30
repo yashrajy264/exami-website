@@ -2165,27 +2165,32 @@ p {
   margin-bottom: 20px;
 }
 
-/* ID Demo Styles */
+/* Student ID Card Styles */
+.student-id-card {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-id-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
 .id-demo {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
-  margin-top: 20px;
+  margin-top: 1.5rem;
 }
 
-.demo-id {
-  background: linear-gradient(135deg, var(--primary) 0%, #4A90FF 100%);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
+/* Remove the old demo styles */
+.demo-id,
 .demo-text {
-  font-size: 14px;
-  color: #64748b;
-  font-weight: 600;
+  display: none;
 }
 
 /* Process Flow Styles */
