@@ -1,33 +1,470 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Exami — For Institutions</title><meta name="theme-color" content="#1f75FF"/><link href="./styles.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='60' height='15' rx='7.5' fill='%233b82f6'/><circle cx='80' cy='22.5' r='7.5' fill='%233b82f6'/><rect x='10' y='42.5' width='60' height='15' rx='7.5' fill='%233b82f6'/><circle cx='80' cy='50' r='7.5' fill='%233b82f6'/><rect x='10' y='70' width='70' height='15' rx='7.5' fill='%233b82f6'/><circle cx='87.5' cy='77.5' r='7.5' fill='%233b82f6'/></svg>"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exami - For Institutions | Streamline Your Examination Process</title>
+  <meta name="description" content="Transform your institution's examination process with Exami's comprehensive platform. Manage applications, payments, and results with ease.">
+  <meta name="theme-color" content="#1f75FF">
+
+  <!-- Preload critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='60' height='15' rx='7.5' fill='%233b82f6'/><circle cx='80' cy='22.5' r='7.5' fill='%233b82f6'/><rect x='10' y='42.5' width='60' height='15' rx='7.5' fill='%233b82f6'/><circle cx='80' cy='50' r='7.5' fill='%233b82f6'/><rect x='10' y='70' width='70' height='15' rx='7.5' fill='%233b82f6'/><circle cx='87.5' cy='77.5' r='7.5' fill='%233b82f6'/></svg>">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Exami - For Institutions">
+  <meta property="og:description" content="Transform your institution's examination process with Exami's comprehensive platform.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
 <body>
   <div class="page-transition"></div>
-  <header class="site-header"><div class="container nav"><div class="brand"><span class="logo" aria-hidden="true">E</span><span class="brand-name">Exami</span></div><button class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle menu"><span></span><span></span><span></span></button><nav id="primary-nav" aria-label="Primary"><ul class="nav-links"><li><a href="/index.html#features" data-nav>Features</a></li><li><a href="/student.html" data-nav>Students</a></li><li><a href="/institution.html" data-nav>Institutions</a></li><li><a href="/government.html" data-nav>Government</a></li><li><a href="/vision.html" data-nav>Vision</a></li><li><a href="/about.html" data-nav>About</a></li><li class="nav-cta"><a class="btn btn-primary" href="/index.html#survey" data-nav>Join Survey</a></li><li><a class="btn btn-ghost" href="/index.html#waitlist" data-nav>Join Waitlist</a></li></ul></nav></div></header>
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <svg class="logo" width="40" height="32" viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="4" width="24" height="6" rx="3" fill="#3b82f6"/>
+          <circle cx="32" cy="7" r="3" fill="#3b82f6"/>
+          <rect x="2" y="13" width="24" height="6" rx="3" fill="#3b82f6"/>
+          <circle cx="32" cy="16" r="3" fill="#3b82f6"/>
+          <rect x="2" y="22" width="28" height="6" rx="3" fill="#3b82f6"/>
+          <circle cx="35" cy="25" r="3" fill="#3b82f6"/>
+        </svg>
+        <span class="brand-name">Exami</span>
+      </div>
+
+      <button class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="primary-nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="./index.html#features" data-nav>Features</a></li>
+          <li><a href="./student.html" data-nav>Students</a></li>
+          <li><a href="./institution.html" data-nav>Institutions</a></li>
+          <li><a href="./government.html" data-nav>Government</a></li>
+          <li><a href="./vision.html" data-nav>Vision</a></li>
+          <li><a href="./about.html" data-nav>About</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" href="./index.html#survey" data-nav>Join Survey</a></li>
+          <li><a class="btn btn-ghost" href="./index.html#waitlist" data-nav>Join Waitlist</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <main id="main">
-    <section class="section hero hero-minimal" aria-labelledby="title">
-      <div class="bg-gradients" aria-hidden="true"><span class="blob blob-1"></span><span class="blob blob-2"></span></div>
-      <div class="container hero-grid">
-        <div class="hero-copy" data-reveal>
-          <h1 id="title">For Institutions</h1>
-          <p class="subtitle">Create exam announcements, build forms with blocks, choose payments, link centers, and publish in minutes.</p>
+  <!-- Hero Section -->
+  <section class="hero hero-minimal">
+    <div class="bg-gradients" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+    </div>
+
+    <div class="container">
+      <div class="hero-copy" data-reveal>
+        <div class="hero-badge" data-reveal>
+          <span class="badge-dot"></span>
+          For Institutions
+        </div>
+
+        <h1 class="hero-title" data-reveal data-reveal-delay="100">
+          Streamline Your Examination
+          <span class="gradient-text">Process</span>
+        </h1>
+
+        <p class="hero-subtitle" data-reveal data-reveal-delay="200">
+          Create exam announcements, build forms with drag-and-drop blocks, configure payments, link exam centers,
+          and publish everything in minutes. Say goodbye to manual processes and hello to efficiency.
+        </p>
+
+        <div class="hero-actions" data-reveal data-reveal-delay="300">
+          <button class="btn btn-primary btn-large">
+            Start Free Trial
+            <span class="btn-arrow">→</span>
+          </button>
+          <button class="btn btn-ghost btn-large">
+            Schedule Demo
+          </button>
         </div>
       </div>
-    </section>
-    <section class="section" aria-labelledby="flow">
-      <div class="container">
-        <h2 id="flow" data-reveal>Operate end‑to‑end</h2>
-        <ol class="how-steps">
-          <li data-reveal>Announce exam → fill details → attach policies</li>
-          <li data-reveal data-reveal-delay="80">Build application form (fields, uploads, validations)</li>
-          <li data-reveal data-reveal-delay="160">Choose payment methods and fees</li>
-          <li data-reveal data-reveal-delay="240">Link exam centers (capacity, pincode rules)</li>
-          <li data-reveal data-reveal-delay="320">Publish and notify candidates</li>
-        </ol>
+    </div>
+  </section>
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">Everything You Need to Manage Examinations</h2>
+        <p class="section-subtitle">Powerful tools designed specifically for educational institutions</p>
       </div>
-    </section>
-  </main>
-  <footer class="site-footer"><div class="container footer-content"><p>© <span id="year"></span> Exami. All rights reserved.</p></div></footer>
+
+      <div class="bento-grid" data-reveal data-reveal-delay="200">
+        <div class="bento-item large" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">📋</div>
+            <h3 class="bento-title">Exam Management Dashboard</h3>
+            <p class="bento-description">Comprehensive dashboard to manage all your examinations, applications, and results from one central location.</p>
+            <div class="bento-visual">
+              <div class="dashboard-preview">
+                <div class="dashboard-metrics">
+                  <div class="metric">1,247 Applications</div>
+                  <div class="metric">89% Completed</div>
+                  <div class="metric">15 Centers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-item medium" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🧱</div>
+            <h3 class="bento-title">Drag & Drop Form Builder</h3>
+            <p class="bento-description">Build custom application forms with pre-built blocks and validation rules.</p>
+          </div>
+        </div>
+
+        <div class="bento-item medium" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">💳</div>
+            <h3 class="bento-title">Flexible Payment Integration</h3>
+            <p class="bento-description">Accept payments through multiple gateways with automatic reconciliation.</p>
+          </div>
+        </div>
+
+        <div class="bento-item small" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">📊</div>
+            <h3 class="bento-title">Analytics & Reporting</h3>
+            <p class="bento-description">Real-time insights and comprehensive reports.</p>
+          </div>
+        </div>
+
+        <div class="bento-item small" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🏫</div>
+            <h3 class="bento-title">Center Management</h3>
+            <p class="bento-description">Manage exam centers, capacity, and logistics.</p>
+          </div>
+        </div>
+
+        <div class="bento-item wide" data-tilt>
+          <div class="bento-content">
+            <div class="bento-icon">🔄</div>
+            <h3 class="bento-title">Automated Workflows</h3>
+            <p class="bento-description">Streamline the entire examination lifecycle with automated notifications, document verification, and result processing.</p>
+            <div class="bento-visual">
+              <div class="workflow-demo">
+                <div class="workflow-step active">
+                  <span class="step-number">1</span>
+                  <span class="step-label">Application</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="workflow-step">
+                  <span class="step-number">2</span>
+                  <span class="step-label">Verification</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="workflow-step">
+                  <span class="step-number">3</span>
+                  <span class="step-label">Payment</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="workflow-step">
+                  <span class="step-number">4</span>
+                  <span class="step-label">Admit Card</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">How Institutions Use Exami</h2>
+        <p class="section-subtitle">Complete end-to-end examination management in 5 simple steps</p>
+      </div>
+
+      <div class="accordion-container" data-reveal data-reveal-delay="200">
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>1. Create Your Exam Announcement</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Start by creating a comprehensive exam announcement with all the details candidates need. Include exam dates, eligibility criteria, syllabus, and important policies.</p>
+              <div class="feature-highlights">
+                <div class="highlight-item">
+                  <span class="material-icons">edit</span>
+                  <span>Rich Text Editor</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">attach_file</span>
+                  <span>Policy Attachments</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">schedule</span>
+                  <span>Timeline Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>2. Build Custom Application Forms</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Use our intuitive drag-and-drop form builder to create custom application forms. Add text fields, file uploads, dropdowns, and validation rules with ease.</p>
+              <div class="feature-highlights">
+                <div class="highlight-item">
+                  <span class="material-icons">widgets</span>
+                  <span>Pre-built Blocks</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">verified</span>
+                  <span>Form Validation</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">save</span>
+                  <span>Auto-save Drafts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>3. Configure Payment Options</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Set up multiple payment methods and fee structures. Support online payments, bank transfers, and even offline payment collection with automatic reconciliation.</p>
+              <div class="feature-highlights">
+                <div class="highlight-item">
+                  <span class="material-icons">payment</span>
+                  <span>Multiple Gateways</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">receipt</span>
+                  <span>Automated Receipts</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">analytics</span>
+                  <span>Revenue Tracking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>4. Manage Exam Centers</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Link exam centers with capacity management, location mapping, and automated seat allocation. Set capacity limits and geographical preferences.</p>
+              <div class="feature-highlights">
+                <div class="highlight-item">
+                  <span class="material-icons">location_on</span>
+                  <span>Center Mapping</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">event_seat</span>
+                  <span>Seat Allocation</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">capacity</span>
+                  <span>Capacity Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span>5. Publish & Monitor</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-answer">
+            <div class="accordion-content">
+              <p>Publish your exam and monitor applications in real-time. Send automated notifications, track completion rates, and manage the entire process from your dashboard.</p>
+              <div class="feature-highlights">
+                <div class="highlight-item">
+                  <span class="material-icons">publish</span>
+                  <span>One-click Publish</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">notifications</span>
+                  <span>Auto Notifications</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="material-icons">monitoring</span>
+                  <span>Real-time Monitoring</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <h2 class="section-title">Why Institutions Choose Exami</h2>
+        <p class="section-subtitle">Join hundreds of institutions already streamlining their examination processes</p>
+      </div>
+
+      <div class="benefits-grid" data-reveal data-reveal-delay="200">
+        <div class="benefit-card" data-tilt>
+          <div class="benefit-icon">⚡</div>
+          <h3 class="benefit-title">90% Faster Processing</h3>
+          <p class="benefit-description">Reduce manual work by automating application processing, verification, and result generation.</p>
+          <div class="benefit-stat">
+            <span class="stat-number">90%</span>
+            <span class="stat-label">Time Saved</span>
+          </div>
+        </div>
+
+        <div class="benefit-card" data-tilt>
+          <div class="benefit-icon">🛡️</div>
+          <h3 class="benefit-title">Bank-Grade Security</h3>
+          <p class="benefit-description">Enterprise-level security with end-to-end encryption, audit trails, and compliance certifications.</p>
+          <div class="benefit-stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Data Security</span>
+          </div>
+        </div>
+
+        <div class="benefit-card" data-tilt>
+          <div class="benefit-icon">📈</div>
+          <h3 class="benefit-title">Real-time Analytics</h3>
+          <p class="benefit-description">Get insights into application trends, completion rates, and demographic data for better decision making.</p>
+          <div class="benefit-stat">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Monitoring</span>
+          </div>
+        </div>
+
+        <div class="benefit-card" data-tilt>
+          <div class="benefit-icon">💰</div>
+          <h3 class="benefit-title">Cost Effective</h3>
+          <p class="benefit-description">Reduce operational costs by eliminating paperwork, manual verification, and traditional printing.</p>
+          <div class="benefit-stat">
+            <span class="stat-number">70%</span>
+            <span class="stat-label">Cost Reduction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-reveal>
+        <h2 class="cta-title">Ready to Transform Your Examination Process?</h2>
+        <p class="cta-subtitle">Join leading institutions already using Exami to streamline their operations</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-large">
+            Start Free Trial
+            <span class="btn-arrow">→</span>
+          </button>
+          <button class="btn btn-ghost btn-large">Schedule Demo</button>
+        </div>
+        <div class="cta-features">
+          <div class="cta-feature">
+            <span class="material-icons">verified</span>
+            <span>Free 30-Day Trial</span>
+          </div>
+          <div class="cta-feature">
+            <span class="material-icons">support</span>
+            <span>Dedicated Support</span>
+          </div>
+          <div class="cta-feature">
+            <span class="material-icons">school</span>
+            <span>Educational Discounts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">Exami</div>
+          <p class="footer-tagline">Revolutionizing examination infrastructure in India</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">GitHub</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4 class="footer-title">Product</h4>
+            <a href="./index.html#features" class="footer-link">Features</a>
+            <a href="./index.html#solutions" class="footer-link">Solutions</a>
+            <a href="#pricing" class="footer-link">Pricing</a>
+            <a href="./about.html" class="footer-link" data-nav>About</a>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-title">Solutions</h4>
+            <a href="./student.html" class="footer-link" data-nav>For Students</a>
+            <a href="./institution.html" class="footer-link" data-nav>For Institutions</a>
+            <a href="./government.html" class="footer-link" data-nav>For Government</a>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-title">Support</h4>
+            <a href="#" class="footer-link">Documentation</a>
+            <a href="#" class="footer-link">Help Center</a>
+            <a href="#" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Status</a>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-title">Legal</h4>
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Terms</a>
+            <a href="#" class="footer-link">Security</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© <span id="year">2024</span> Exami. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
   <script src="./app.js" defer></script>
 </body>
 </html>
