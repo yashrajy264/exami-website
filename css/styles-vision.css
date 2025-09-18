@@ -1,0 +1,194 @@
+/* ===== VISION PAGE SPECIFIC STYLES ===== */
+
+/* ===== HERO MINIMAL ===== */
+.hero-minimal {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: var(--space-3xl);
+  position: relative;
+  overflow: visible;
+}
+
+.hero-minimal .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  text-align: center;
+}
+
+.hero-minimal .hero-copy {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-minimal .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+}
+
+.hero-minimal h1 {
+  font-size: var(--font-5xl);
+  font-weight: 800;
+  margin-bottom: var(--space-xl);
+  color: var(--text);
+}
+
+.hero-minimal .subtitle {
+  font-size: var(--font-xl);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto var(--space-2xl);
+  line-height: 1.6;
+}
+
+/* ===== ROADMAP ===== */
+.roadmap {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2xl) 0;
+}
+
+.roadmap li {
+  position: relative;
+  padding: var(--space-xl) var(--space-2xl);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+  transition: var(--transition);
+}
+
+.roadmap li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.roadmap li::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: var(--shadow);
+}
+
+/* ===== ROADMAP ITEMS ===== */
+.roadmap-container {
+  display: grid;
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.roadmap-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  transition: var(--transition-slow);
+  position: relative;
+}
+
+.roadmap-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary);
+}
+
+.roadmap-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.roadmap-phase {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+}
+
+.roadmap-item h3 {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--text);
+}
+
+.roadmap-item p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== BENTO CARDS ===== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.bento-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  transition: var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+.bento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary);
+}
+
+.bento-card h3 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--text);
+}
+
+.bento-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
