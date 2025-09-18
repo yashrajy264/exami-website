@@ -65,19 +65,33 @@
     document.documentElement.style.scrollBehavior = 'auto';
   }
 
-  // Mobile menu toggle
-  const hamburger = document.querySelector('.hamburger');
-  const primaryNav = document.getElementById('primary-nav');
-  if (hamburger && primaryNav) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = primaryNav.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', String(isOpen));
+  // Mobile menu toggle - Fix selector mismatch
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('.nav');
+
+  if (mobileToggle && nav) {
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('nav-open');
+      document.body.classList.toggle('nav-open', isOpen);
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
     });
-    primaryNav.addEventListener('click', (e) => {
-      const target = e.target;
-      if (target instanceof Element && target.tagName === 'A') {
-        primaryNav.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+    
+    // Close menu when clicking on nav links
+    const navLinks = nav.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('nav-open')) {
+        nav.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
@@ -790,7 +804,7 @@
   class Navigation {
       constructor() {
           this.nav = document.querySelector('.nav');
-          this.mobileToggle = document.querySelector('.mobile-toggle');
+          this.mobileToggle = document.querySelector('.mobile-menu-toggle'); // Fixed selector
           this.dropdowns = document.querySelectorAll('.dropdown');
           this.init();
       }
