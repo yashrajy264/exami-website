@@ -4,241 +4,707 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Exami - Our Mission & Vision</title>
+    <meta name="description" content="Learn about Exami's mission to revolutionize India's examination infrastructure with AI-powered security and modern technology.">
+    <meta name="theme-color" content="#1f75FF">
     
     <!-- Font Preloads -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/styles-global.css">
-    <link rel="stylesheet" href="css/styles-about.css">
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="styles.css">
     
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exami - About Us | Revolutionizing Digital Assessments</title>
-  <meta name="description" content="Learn about Exami's mission to revolutionize India's examination infrastructure with AI-powered security and modern technology.">
-  <meta name="theme-color" content="#1f75FF">
-
-  <!-- Preload critical resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='60' height='15' rx='7.5' fill='%233b82f6'/><circle cx='80' cy='22.5' r='7.5' fill='%233b82f6'/><rect x='10' y='42.5' width='60' height='15' rx='7.5' fill='%233b82f6'/><circle cx='80' cy='50' r='7.5' fill='%233b82f6'/><rect x='10' y='70' width='70' height='15' rx='7.5' fill='%233b82f6'/><circle cx='87.5' cy='77.5' r='7.5' fill='%233b82f6'/></svg>">
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Exami - About Us">
-  <meta property="og:description" content="Learn about our mission to revolutionize India's examination infrastructure.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Exami - About Us">
+    <meta property="og:description" content="Learn about our mission to revolutionize India's examination infrastructure.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <style>
+    /* About Page Specific Styles */
+    .about-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 120px 0 80px;
+    }
+    
+    .story-section {
+        padding: 80px 0;
+        background: var(--gray-50);
+    }
+    
+    .story-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .story-timeline {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .timeline-item {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+    }
+    
+    .timeline-item:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+    }
+    
+    .timeline-year {
+        font-size: var(--font-2xl);
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+    
+    .team-section {
+        padding: 80px 0;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .team-card {
+        background: white;
+        border-radius: var(--radius-xl);
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+        border: 1px solid var(--border);
+    }
+    
+    .team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--primary);
+    }
+    
+    .team-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        font-weight: 700;
+    }
+    
+    .team-name {
+        font-size: var(--font-xl);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    
+    .team-role {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .team-bio {
+        color: var(--text-muted);
+        font-size: var(--font-sm);
+        line-height: 1.6;
+    }
+    
+    .roadmap-section {
+        padding: 80px 0;
+        background: var(--gray-50);
+        position: relative;
+    }
+    
+    .roadmap-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .roadmap-progress {
+        position: fixed;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 200px;
+        background: var(--gray-200);
+        border-radius: 2px;
+        z-index: 100;
+    }
+    
+    .roadmap-progress-fill {
+        width: 100%;
+        background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+        border-radius: 2px;
+        transition: height 0.3s ease;
+        height: 0%;
+    }
+    
+    .roadmap-timeline {
+        position: relative;
+        padding-left: 3rem;
+    }
+    
+    .roadmap-timeline::before {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--gray-300);
+    }
+    
+    .roadmap-item {
+        position: relative;
+        margin-bottom: 3rem;
+        opacity: 0.5;
+        transition: all 0.5s ease;
+    }
+    
+    .roadmap-item.active {
+        opacity: 1;
+        transform: translateX(10px);
+    }
+    
+    .roadmap-item::before {
+        content: '';
+        position: absolute;
+        left: -2.5rem;
+        top: 1rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--gray-300);
+        transition: all 0.3s ease;
+    }
+    
+    .roadmap-item.active::before {
+        background: var(--primary);
+        box-shadow: 0 0 0 4px rgba(21, 117, 255, 0.2);
+    }
+    
+    .roadmap-content {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+    }
+    
+    .roadmap-item.active .roadmap-content {
+        box-shadow: var(--shadow-lg);
+        border-left: 4px solid var(--primary);
+    }
+    
+    .roadmap-quarter {
+        font-size: var(--font-sm);
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+    
+    .roadmap-title {
+        font-size: var(--font-xl);
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    
+    .roadmap-features {
+        list-style: none;
+    }
+    
+    .roadmap-features li {
+        padding: 0.5rem 0;
+        color: var(--text-muted);
+        position: relative;
+        padding-left: 1.5rem;
+    }
+    
+    .roadmap-features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--success);
+        font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+        .roadmap-progress {
+            display: none;
+        }
+        
+        .roadmap-timeline {
+            padding-left: 2rem;
+        }
+        
+        .roadmap-item::before {
+            left: -1.5rem;
+        }
+    }
+    </style>
 </head>
 <body>
-  <!-- Custom Cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
-  <div class="cursor-magnetic"></div>
-  
-  <!-- Navigation -->
-  <nav class="nav" data-nav>
-    <div class="nav-container">
-      <a href="./index.html" class="nav-brand">
-        <svg class="logo" width="40" height="32" viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="4" width="24" height="6" rx="3" fill="#3b82f6"/>
-          <circle cx="32" cy="7" r="3" fill="#3b82f6"/>
-          <rect x="2" y="13" width="24" height="6" rx="3" fill="#3b82f6"/>
-          <circle cx="32" cy="16" r="3" fill="#3b82f6"/>
-          <rect x="2" y="22" width="28" height="6" rx="3" fill="#3b82f6"/>
-          <circle cx="35" cy="25" r="3" fill="#3b82f6"/>
-        </svg>
-      </a>
-      
-      <div class="nav-links">
-        <a href="./index.html#features" class="nav-link">Features</a>
-        <div class="nav-dropdown">
-          <a href="#" class="nav-link dropdown-trigger">Solutions</a>
-          <div class="dropdown-menu">
-            <a href="./student.html" class="dropdown-item" data-nav>
-              <div class="dropdown-icon"><span class="material-icons">school</span></div>
-              <div>
-                <div class="dropdown-title">For Students</div>
-                <div class="dropdown-desc">Enhanced learning experience</div>
-              </div>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="cursor-magnetic"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav" data-nav>
+        <div class="nav-container">
+            <a href="./index.html" class="nav-brand">
+                <svg class="logo" width="40" height="32" viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="4" width="24" height="6" rx="3" fill="#3b82f6"/>
+                    <circle cx="32" cy="7" r="3" fill="#3b82f6"/>
+                    <rect x="2" y="13" width="24" height="6" rx="3" fill="#3b82f6"/>
+                    <circle cx="32" cy="16" r="3" fill="#3b82f6"/>
+                    <rect x="2" y="22" width="28" height="6" rx="3" fill="#3b82f6"/>
+                    <circle cx="35" cy="25" r="3" fill="#3b82f6"/>
+                </svg>
+                <span class="logo-text">Exami</span>
             </a>
-            <a href="./institution.html" class="dropdown-item" data-nav>
-              <div class="dropdown-icon"><span class="material-icons">business</span></div>
-              <div>
-                <div class="dropdown-title">For Institutions</div>
-                <div class="dropdown-desc">Streamlined administration</div>
-              </div>
-            </a>
-            <a href="./government.html" class="dropdown-item" data-nav>
-              <div class="dropdown-icon"><span class="material-icons">account_balance</span></div>
-              <div>
-                <div class="dropdown-title">For Government</div>
-                <div class="dropdown-desc">Policy & compliance tools</div>
-              </div>
-            </a>
-          </div>
+            
+            <div class="nav-links">
+                <a href="./index.html#features" class="nav-link">Features</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">Solutions</a>
+                    <div class="dropdown-menu">
+                        <a href="./student.html" class="dropdown-item" data-nav>
+                            <div class="dropdown-icon"><span class="material-icons">school</span></div>
+                            <div>
+                                <div class="dropdown-title">For Students</div>
+                                <div class="dropdown-desc">Enhanced learning experience</div>
+                            </div>
+                        </a>
+                        <a href="./institution.html" class="dropdown-item" data-nav>
+                            <div class="dropdown-icon"><span class="material-icons">business</span></div>
+                            <div>
+                                <div class="dropdown-title">For Institutions</div>
+                                <div class="dropdown-desc">Streamlined administration</div>
+                            </div>
+                        </a>
+                        <a href="./government.html" class="dropdown-item" data-nav>
+                            <div class="dropdown-icon"><span class="material-icons">account_balance</span></div>
+                            <div>
+                                <div class="dropdown-title">For Government</div>
+                                <div class="dropdown-desc">Policy & compliance tools</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="./vision.html" class="nav-link" data-nav>Vision</a>
+                <a href="./about.html" class="nav-link" data-nav>About</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn btn-primary">Take Survey</button>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <a href="./vision.html" class="nav-link" data-nav>Vision</a>
-        <a href="./about.html" class="nav-link" data-nav>About</a>
-      </div>
-      
-      <div class="nav-actions">
-        <button class="btn btn-primary">Take Survey</button>
-      </div>
-      
-      <button class="mobile-menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="page-transition"></div>
-  
-  <main id="main">
-    <!-- Hero Section -->
-    <section class="hero hero-minimal">
-      <div class="bg-gradients" aria-hidden="true">
-        <span class="blob blob-1"></span>
-        <span class="blob blob-2"></span>
-      </div>
-
-      <div class="container">
-        <div class="hero-copy" data-reveal>
-          <div class="hero-badge" data-reveal>
-            <span class="badge-dot"></span>
-            Our Story
-          </div>
-
-          <h1 class="hero-title" data-reveal data-reveal-delay="100">
-            Building India's Future
-            <span class="gradient-text">Examination Ecosystem</span>
-          </h1>
-
-          <p class="hero-subtitle" data-reveal data-reveal-delay="200">
-            We're building a unified examination infrastructure — an ecosystem to modernize how exams are announced,
-            applied to, delivered, and analyzed across India's education landscape.
-          </p>
+    </nav>
+    
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-badge" data-reveal>
+                <span class="badge-dot"></span>
+                Our Story
+            </div>
+            
+            <h1 class="hero-title" data-reveal data-reveal-delay="100">
+                Revolutionizing India's
+                <span class="gradient-text">Examination Ecosystem</span>
+            </h1>
+            
+            <p class="hero-subtitle" data-reveal data-reveal-delay="200">
+                Born from the frustration of millions of students facing server crashes, 
+                document chaos, and endless registrations. We're building the future of examinations.
+            </p>
         </div>
-      </div>
     </section>
-
-    <!-- Mission Section -->
-    <section class="features-section">
-      <div class="container">
-        <div class="section-header" data-reveal>
-          <h2 class="section-title">Our Mission</h2>
-          <p class="section-subtitle">Solving India's examination challenges with technology and innovation</p>
+    
+    <!-- Company Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <h2 class="section-title">The Exami Story</h2>
+                <p class="section-subtitle">
+                    Every year, millions of Indian students face the same nightmare: server crashes during exam registrations, 
+                    lost documents, multiple application processes, and endless queues. We experienced this firsthand and 
+                    decided to build the solution India desperately needs.
+                </p>
+                
+                <div class="story-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <h3>The Problem</h3>
+                        <p>Identified the massive inefficiencies in India's examination system affecting 50+ million students annually.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <h3>The Vision</h3>
+                        <p>Conceptualized a unified platform with unique 8-digit IDs, eliminating redundant processes and server crashes.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <h3>The Future</h3>
+                        <p>Building India's first comprehensive examination ecosystem with AI-powered security and seamless user experience.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="bento-grid" data-reveal data-reveal-delay="200">
-          <div class="bento-item large" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">🎯</div>
-              <h3 class="bento-title">Unified Platform</h3>
-              <p class="bento-description">One platform for all examinations across India, eliminating the fragmentation and chaos that currently exists in the examination ecosystem.</p>
-            </div>
-          </div>
-
-          <div class="bento-item medium" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">🛡️</div>
-              <h3 class="bento-title">Secure & Fair</h3>
-              <p class="bento-description">Bank-grade security with AI-powered proctoring ensures fair examinations for all candidates.</p>
-            </div>
-          </div>
-
-          <div class="bento-item medium" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">⚡</div>
-              <h3 class="bento-title">Lightning Fast</h3>
-              <p class="bento-description">Modern infrastructure that can handle millions of users simultaneously without downtime.</p>
-            </div>
-          </div>
-
-          <div class="bento-item small" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">📱</div>
-              <h3 class="bento-title">Mobile First</h3>
-              <p class="bento-description">Designed for mobile devices, accessible anywhere in India.</p>
-            </div>
-          </div>
-
-          <div class="bento-item small" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">🇮🇳</div>
-              <h3 class="bento-title">Made in India</h3>
-              <p class="bento-description">Built by Indians, for India, with data sovereignty in mind.</p>
-            </div>
-          </div>
-
-          <div class="bento-item wide" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">🔄</div>
-              <h3 class="bento-title">End-to-End Solution</h3>
-              <p class="bento-description">From exam announcement to result publication, we handle the complete examination lifecycle with transparency and efficiency.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-  </main>
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <div class="footer-logo">Exami</div>
-          <p class="footer-tagline">Revolutionizing examination infrastructure in India</p>
-          <div class="footer-social">
-            <a href="#" class="social-link">Twitter</a>
-            <a href="#" class="social-link">LinkedIn</a>
-            <a href="#" class="social-link">GitHub</a>
-          </div>
+    
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">
+                    A passionate group of innovators, educators, and technologists working to transform India's examination landscape.
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">AK</div>
+                    <h3 class="team-name">Arjun Kumar</h3>
+                    <p class="team-role">Founder & CEO</p>
+                    <p class="team-bio">
+                        Former IIT graduate with 8+ years in EdTech. Passionate about solving India's educational challenges through technology.
+                    </p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">PS</div>
+                    <h3 class="team-name">Priya Sharma</h3>
+                    <p class="team-role">CTO & Co-founder</p>
+                    <p class="team-bio">
+                        AI/ML expert with experience at top tech companies. Leading our technical innovation and security infrastructure.
+                    </p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">RG</div>
+                    <h3 class="team-name">Rahul Gupta</h3>
+                    <p class="team-role">Head of Product</p>
+                    <p class="team-bio">
+                        Product strategist with deep understanding of Indian education system. Ensuring user-centric design and functionality.
+                    </p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">SM</div>
+                    <h3 class="team-name">Sneha Mehta</h3>
+                    <p class="team-role">Head of Operations</p>
+                    <p class="team-bio">
+                        Operations expert focused on scaling our platform to serve millions of students across India efficiently.
+                    </p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">VT</div>
+                    <h3 class="team-name">Vikram Thakur</h3>
+                    <p class="team-role">Lead Developer</p>
+                    <p class="team-bio">
+                        Full-stack developer building robust, scalable solutions. Expert in cloud architecture and security systems.
+                    </p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">AN</div>
+                    <h3 class="team-name">Anita Nair</h3>
+                    <p class="team-role">UX/UI Designer</p>
+                    <p class="team-bio">
+                        Design thinking expert creating intuitive interfaces that make complex examination processes simple and accessible.
+                    </p>
+                </div>
+            </div>
         </div>
-
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4 class="footer-title">Product</h4>
-            <a href="./index.html#features" class="footer-link">Features</a>
-            <a href="./index.html#solutions" class="footer-link">Solutions</a>
-            <a href="#pricing" class="footer-link">Pricing</a>
-            <a href="./about.html" class="footer-link" data-nav>About</a>
-          </div>
-
-          <div class="footer-column">
-            <h4 class="footer-title">Solutions</h4>
-            <a href="./student.html" class="footer-link" data-nav>For Students</a>
-            <a href="./institution.html" class="footer-link" data-nav>For Institutions</a>
-            <a href="./government.html" class="footer-link" data-nav>For Government</a>
-          </div>
-
-          <div class="footer-column">
-            <h4 class="footer-title">Support</h4>
-            <a href="#" class="footer-link">Documentation</a>
-            <a href="#" class="footer-link">Help Center</a>
-            <a href="#" class="footer-link">Contact</a>
-            <a href="#" class="footer-link">Status</a>
-          </div>
-
-          <div class="footer-column">
-            <h4 class="footer-title">Legal</h4>
-            <a href="#" class="footer-link">Privacy</a>
-            <a href="#" class="footer-link">Terms</a>
-            <a href="#" class="footer-link">Security</a>
-          </div>
+    </section>
+    
+    <!-- Interactive Roadmap Section -->
+    <section class="roadmap-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Roadmap</h2>
+                <p class="section-subtitle">
+                    Follow our journey as we build India's most comprehensive examination platform.
+                </p>
+            </div>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-progress">
+                    <div class="roadmap-progress-fill" id="roadmapProgress"></div>
+                </div>
+                
+                <div class="roadmap-timeline">
+                    <div class="roadmap-item" data-roadmap-item>
+                        <div class="roadmap-content">
+                            <div class="roadmap-quarter">Q1 2024</div>
+                            <h3 class="roadmap-title">Foundation & Research</h3>
+                            <ul class="roadmap-features">
+                                <li>Market research and user interviews</li>
+                                <li>Technical architecture design</li>
+                                <li>Core team formation</li>
+                                <li>Initial funding and partnerships</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-roadmap-item>
+                        <div class="roadmap-content">
+                            <div class="roadmap-quarter">Q2 2024</div>
+                            <h3 class="roadmap-title">MVP Development</h3>
+                            <ul class="roadmap-features">
+                                <li>Core platform development</li>
+                                <li>User registration and ID system</li>
+                                <li>Basic exam application flow</li>
+                                <li>Security framework implementation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-roadmap-item>
+                        <div class="roadmap-content">
+                            <div class="roadmap-quarter">Q3 2024</div>
+                            <h3 class="roadmap-title">Beta Testing</h3>
+                            <ul class="roadmap-features">
+                                <li>Closed beta with select institutions</li>
+                                <li>AI-powered document verification</li>
+                                <li>Mobile app development</li>
+                                <li>Performance optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-roadmap-item>
+                        <div class="roadmap-content">
+                            <div class="roadmap-quarter">Q4 2024</div>
+                            <h3 class="roadmap-title">Public Launch</h3>
+                            <ul class="roadmap-features">
+                                <li>Public platform launch</li>
+                                <li>Integration with major exam boards</li>
+                                <li>Advanced analytics dashboard</li>
+                                <li>24/7 customer support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-roadmap-item>
+                        <div class="roadmap-content">
+                            <div class="roadmap-quarter">Q1 2025</div>
+                            <h3 class="roadmap-title">Scale & Expansion</h3>
+                            <ul class="roadmap-features">
+                                <li>Multi-language support</li>
+                                <li>Advanced AI proctoring</li>
+                                <li>Blockchain-based certificates</li>
+                                <li>Pan-India government partnerships</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-roadmap-item>
+                        <div class="roadmap-content">
+                            <div class="roadmap-quarter">Q2 2025</div>
+                            <h3 class="roadmap-title">Innovation & Future</h3>
+                            <ul class="roadmap-features">
+                                <li>AR/VR examination experiences</li>
+                                <li>Predictive analytics for career guidance</li>
+                                <li>International expansion</li>
+                                <li>Next-gen assessment technologies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copyright">© <span id="year">2024</span> Exami. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-  <script src="./app.js" defer></script>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Join Our Mission</h2>
+                <p class="section-subtitle">
+                    Be part of the revolution that's transforming how India conducts examinations.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large">
+                        Take Survey
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <button class="btn btn-ghost btn-large">
+                        Join Our Team
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <svg class="logo" width="40" height="32" viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="24" height="6" rx="3" fill="#3b82f6"/>
+                            <circle cx="32" cy="7" r="3" fill="#3b82f6"/>
+                            <rect x="2" y="13" width="24" height="6" rx="3" fill="#3b82f6"/>
+                            <circle cx="32" cy="16" r="3" fill="#3b82f6"/>
+                            <rect x="2" y="22" width="28" height="6" rx="3" fill="#3b82f6"/>
+                            <circle cx="35" cy="25" r="3" fill="#3b82f6"/>
+                        </svg>
+                        <span class="logo-text">Exami</span>
+                    </div>
+                    <p>Revolutionizing India's examination ecosystem, one student at a time.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <a href="./student.html">For Students</a>
+                        <a href="./institution.html">For Institutions</a>
+                        <a href="./government.html">For Government</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="./about.html">About Us</a>
+                        <a href="./vision.html">Our Vision</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">API</a>
+                        <a href="#">Support</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Exami. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="GitHub">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+    // Interactive Roadmap Scroll Animation
+    function initRoadmapAnimation() {
+        const roadmapItems = document.querySelectorAll('[data-roadmap-item]');
+        const progressFill = document.getElementById('roadmapProgress');
+        const roadmapSection = document.querySelector('.roadmap-section');
+        
+        if (!roadmapItems.length || !progressFill || !roadmapSection) return;
+        
+        function updateRoadmap() {
+            const sectionTop = roadmapSection.offsetTop;
+            const sectionHeight = roadmapSection.offsetHeight;
+            const scrollTop = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            
+            // Calculate progress through the roadmap section
+            const sectionProgress = Math.max(0, Math.min(1, 
+                (scrollTop + windowHeight - sectionTop) / (sectionHeight + windowHeight)
+            ));
+            
+            // Update progress bar
+            progressFill.style.height = `${sectionProgress * 100}%`;
+            
+            // Update roadmap items
+            roadmapItems.forEach((item, index) => {
+                const itemTop = item.offsetTop;
+                const itemProgress = (scrollTop + windowHeight - sectionTop - itemTop) / windowHeight;
+                
+                if (itemProgress > 0.3) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+        
+        // Throttled scroll handler
+        let ticking = false;
+        function handleScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateRoadmap();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+        updateRoadmap(); // Initial call
+    }
+    
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        initRoadmapAnimation();
+        
+        // Add reveal animations
+        const revealElements = document.querySelectorAll('[data-reveal]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        revealElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    });
+    </script>
 </body>
 </html>
