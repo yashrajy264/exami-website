@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision - Exami's Future Roadmap</title>
-    
-    <!-- Font Preloads -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/styles-global.css">
-    <link rel="stylesheet" href="css/styles-vision.css">
-    
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exami - Our Vision | Building India's Future Examination Infrastructure</title>
@@ -43,11 +31,60 @@
   <!-- Navigation -->
   <nav class="nav" data-nav>
     <div class="nav-container">
-      <a href="./index.html" class="nav-brand">
+      <div class="nav-brand">
         <svg class="logo" width="40" height="32" viewBox="0 0 40 32" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="4" width="24" height="6" rx="3" fill="#3b82f6"/>
           <circle cx="32" cy="7" r="3" fill="#3b82f6"/>
           <rect x="2" y="13" width="24" height="6" rx="3" fill="#3b82f6"/>
+          <circle cx="32" cy="16" r="3" fill="#3b82f6"/>
+          <rect x="2" y="22" width="28" height="6" rx="3" fill="#3b82f6"/>
+          <circle cx="35" cy="25" r="3" fill="#3b82f6"/>
+        </svg>
+      </div>
+      
+      <div class="nav-links">
+        <a href="./index.html#features" class="nav-link">Features</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link dropdown-trigger">Solutions</a>
+          <div class="dropdown-menu">
+            <a href="./student.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon"><span class="material-icons">school</span></div>
+              <div>
+                <div class="dropdown-title">For Students</div>
+                <div class="dropdown-desc">Enhanced learning experience</div>
+              </div>
+            </a>
+            <a href="./institution.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon"><span class="material-icons">business</span></div>
+              <div>
+                <div class="dropdown-title">For Institutions</div>
+                <div class="dropdown-desc">Streamlined administration</div>
+              </div>
+            </a>
+            <a href="./government.html" class="dropdown-item" data-nav>
+              <div class="dropdown-icon"><span class="material-icons">account_balance</span></div>
+              <div>
+                <div class="dropdown-title">For Government</div>
+                <div class="dropdown-desc">Policy & compliance tools</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <a href="./vision.html" class="nav-link" data-nav>Vision</a>
+        <a href="./about.html" class="nav-link" data-nav>About</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="btn btn-primary">Take Survey</button>
+      </div>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
           <circle cx="32" cy="16" r="3" fill="#3b82f6"/>
           <rect x="2" y="22" width="28" height="6" rx="3" fill="#3b82f6"/>
           <circle cx="35" cy="25" r="3" fill="#3b82f6"/>
