@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yashrajy264.github.io/exami-website/sitemap.xml
+
+# Disallow crawling of system files
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /*.swp
+Disallow: /.DS_Store
+Disallow: /exami-website.code-workspace
+
+# Allow crawling of all HTML pages and assets
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
+Allow: /*.webp
+Allow: /*.png
+Allow: /*.ico
