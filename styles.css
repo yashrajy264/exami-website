@@ -3937,3 +3937,41 @@ p {
     order: 3;
   }
 }
+
+/* Mobile Frame Styles for Student Page */
+.mobile-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.mobile-frame iframe {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 20px !important;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .mobile-frame {
+    padding: 1rem;
+    border-radius: 20px;
+  }
+  
+  .mobile-frame iframe {
+    width: 320px !important;
+    height: 568px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-frame iframe {
+    width: 280px !important;
+    height: 497px !important;
+  }
+}
