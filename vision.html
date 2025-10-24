@@ -3,39 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exami - Our Vision | Building India's Future Examination Infrastructure</title>
-  <meta name="description" content="Discover Exami's vision for India's examination future. From AI-powered proctoring to unified infrastructure, we're building the next generation of digital assessments.">
-  <meta name="theme-color" content="#1f75FF">
+  <title>Exami – Vision</title>
+  <meta name="description" content="Exami's roadmap from ideation in 2025 to nationwide rollout beyond 2026.">
+  <meta name="theme-color" content="#0B5FFF">
 
-  <!-- Preload critical resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
   <link rel="stylesheet" href="./styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='60' height='15' rx='7.5' fill='%233b82f6'/><circle cx='80' cy='22.5' r='7.5' fill='%233b82f6'/><rect x='10' y='42.5' width='60' height='15' rx='7.5' fill='%233b82f6'/><circle cx='80' cy='50' r='7.5' fill='%233b82f6'/><rect x='10' y='70' width='70' height='15' rx='7.5' fill='%233b82f6'/><circle cx='87.5' cy='77.5' r='7.5' fill='%233b82f6'/></svg>">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Exami - Our Vision">
-  <meta property="og:description" content="Discover our vision for India's examination future with AI-powered technology.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    /* Page-scoped styles (no gradient backgrounds) */
+    .vision-page { background: var(--bg); color: var(--text); }
+
+    /* 2-column hero (solid backgrounds only) */
+    .vision-hero { padding: 96px 0 64px; }
+    .vision-hero .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .vision-hero .kicker { display: inline-flex; align-items: center; gap: .5rem; background: var(--primary); color: #fff; padding: .5rem 1rem; border-radius: 9999px; font-weight: 600; font-size: .875rem; margin-bottom: 1rem; }
+    .vision-hero .title { font-weight: 800; font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; color: var(--text); }
+    .vision-hero .subtitle { color: var(--text-muted); font-size: 1.125rem; line-height: 1.6; margin-bottom: 1.5rem; }
+    .vision-hero .actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .vision-hero .btn-primary { background: var(--primary); color: #fff; border: none; padding: .875rem 1.5rem; border-radius: .5rem; font-weight: 600; cursor: pointer; }
+    .vision-hero .btn-ghost { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: .875rem 1.5rem; border-radius: .5rem; font-weight: 600; cursor: pointer; }
+    .vision-hero .visual { height: 360px; border: 1px solid var(--border); background: var(--surface); border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); }
+
+    /* Timeline (accessible, motion-aware) */
+    .timeline { padding: 64px 0; background: var(--gray-50); }
+    .timeline .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .timeline-header { text-align: center; margin-bottom: 2rem; }
+    .timeline-title { font-weight: 800; font-size: 2rem; margin-bottom: .5rem; color: var(--text); }
+    .timeline-subtitle { color: var(--text-muted); }
+    .timeline-wrap { display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; align-items: start; }
+    .timeline-rail { position: sticky; top: 120px; height: calc(100vh - 160px); }
+    .timeline-rail .rail { position: relative; width: 2px; height: 100%; background: var(--border); margin-left: 20px; }
+    .timeline-rail .progress { position: absolute; left: 0; bottom: 0; width: 2px; height: 0; background: var(--primary); transition: height 0.2s ease; }
+
+    .timeline-list { list-style: none; padding: 0; margin: 0; }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 60px 1fr; gap: 1rem; padding: 1.25rem 0; opacity: 0; transform: translateY(10px); transition: opacity .4s ease, transform .4s ease; }
+    .timeline-item.active { opacity: 1; transform: translateY(0); }
+    .timeline-marker { position: relative; margin-top: .25rem; }
+    .timeline-dot { width: 12px; height: 12px; background: var(--primary); border-radius: 50%; position: absolute; left: 14px; top: 4px; box-shadow: 0 0 0 4px var(--surface); }
+    .timeline-content { background: #fff; border: 1px solid var(--border); border-radius: .75rem; padding: 1rem; box-shadow: var(--shadow-sm); }
+    .timeline-meta { display: inline-flex; align-items: center; gap: .5rem; font-size: .75rem; color: var(--text-muted); margin-bottom: .25rem; }
+    .timeline-heading { font-weight: 700; font-size: 1.125rem; margin-bottom: .25rem; color: var(--text); }
+    .timeline-copy { color: var(--text-muted); line-height: 1.6; margin-bottom: .75rem; }
+    .timeline-toggle { display: inline-flex; align-items: center; gap: .5rem; background: transparent; border: 1px solid var(--border); border-radius: .5rem; padding: .5rem .75rem; cursor: pointer; font-weight: 600; color: var(--text); }
+    .timeline-details { display: none; margin-top: .75rem; color: var(--text-muted); }
+    .timeline-details.open { display: block; }
+    .media-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.75rem; }
+    .media { height: 80px; border-radius: 0.5rem; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 0 24px rgba(34,42,53,0.06), 0 1px 1px rgba(0,0,0,0.05), 0 0 0 1px rgba(34,42,53,0.04), 0 0 4px rgba(34,42,53,0.08), 0 16px 68px rgba(47,48,55,0.05); will-change: transform; }
+    .pill { display:inline-flex; align-items:center; gap:.5rem; padding:.25rem .5rem; border:1px solid var(--border); border-radius:9999px; font-size:.75rem; color:var(--text-muted); margin-right:.5rem; }
+
+    .kbd-nav { font-size: .875rem; color: var(--text-muted); text-align: center; margin-top: .5rem; }
+
+    @media (max-width: 768px) {
+      .vision-hero .grid { grid-template-columns: 1fr; }
+      .vision-hero .visual { height: 260px; }
+      .timeline-wrap { grid-template-columns: 40px 1fr; }
+      .timeline-dot { left: 6px; }
+      .timeline-item { grid-template-columns: 40px 1fr; }
+      .media { height: 120px; }
+    }
+  </style>
 </head>
-<body>
+<body class="vision-page">
   <!-- Custom Cursor -->
   <div class="cursor"></div>
   <div class="cursor-follower"></div>
   <div class="cursor-magnetic"></div>
-  
-  <!-- Navigation -->
+
+  <!-- Navigation (reuse existing styles) -->
   <nav class="nav" data-nav>
     <div class="nav-container">
       <div class="nav-brand">
         <img src="exami-logo.webp" alt="Exami Logo" class="logo" width="120" height="32">
       </div>
-      
       <div class="nav-links">
         <a href="./index.html#features" class="nav-link">Features</a>
         <div class="nav-dropdown">
@@ -67,11 +111,7 @@
         <a href="./vision.html" class="nav-link" data-nav>Vision</a>
         <a href="./about.html" class="nav-link" data-nav>About</a>
       </div>
-      
-      <div class="nav-actions">
-        <button class="btn btn-primary">Take Survey</button>
-      </div>
-      
+      <div class="nav-actions"></div>
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -79,180 +119,128 @@
       </button>
     </div>
   </nav>
-          <circle cx="32" cy="16" r="3" fill="#3b82f6"/>
-          <rect x="2" y="22" width="28" height="6" rx="3" fill="#3b82f6"/>
-          <circle cx="35" cy="25" r="3" fill="#3b82f6"/>
-        </svg>
-      </a>
-      
-      <div class="nav-links">
-        <a href="./index.html#features" class="nav-link">Features</a>
-        <div class="nav-dropdown">
-          <a href="#" class="nav-link dropdown-trigger">Solutions</a>
-          <div class="dropdown-menu">
-            <a href="./student.html" class="dropdown-item" data-nav>
-              <div class="dropdown-icon"><span class="material-icons">school</span></div>
-              <div>
-                <div class="dropdown-title">For Students</div>
-                <div class="dropdown-desc">Enhanced learning experience</div>
-              </div>
-            </a>
-            <a href="./institution.html" class="dropdown-item" data-nav>
-              <div class="dropdown-icon"><span class="material-icons">business</span></div>
-              <div>
-                <div class="dropdown-title">For Institutions</div>
-                <div class="dropdown-desc">Streamlined administration</div>
-              </div>
-            </a>
-            <a href="./government.html" class="dropdown-item" data-nav>
-              <div class="dropdown-icon"><span class="material-icons">account_balance</span></div>
-              <div>
-                <div class="dropdown-title">For Government</div>
-                <div class="dropdown-desc">Policy & compliance tools</div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <a href="./vision.html" class="nav-link" data-nav>Our Vision</a>
-        <a href="./about.html" class="nav-link" data-nav>About</a>
-      </div>
-      
-      <div class="nav-actions">
-        <button class="btn btn-primary">Take Survey</button>
-      </div>
-      
-      <button class="mobile-menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="page-transition"></div>
-  
+
   <main id="main">
-    <!-- Hero Section -->
-    <section class="hero hero-minimal">
-      <div class="bg-gradients" aria-hidden="true">
-        <span class="blob blob-1"></span>
-        <span class="blob blob-2"></span>
-      </div>
-
-      <div class="container">
-        <div class="hero-copy" data-reveal>
-          <div class="hero-badge" data-reveal>
-            <span class="badge-dot"></span>
-            Our Vision
+    <!-- Hero: 2-column solid layout -->
+    <section class="vision-hero">
+      <div class="grid">
+        <div>
+          <div class="kicker"><span class="material-icons" aria-hidden="true">flag</span> Our Vision</div>
+          <h1 class="title">Building India's Examination Backbone</h1>
+          <p class="subtitle">From ideation in 2025 to nationwide rollout, Exami is creating a secure, unified platform for applications, assessments, and results—accessible to every student and institution.</p>
+          <div class="actions">
+            <a href="#roadmap" class="btn-primary">Explore Roadmap</a>
+            <a href="./about.html" class="btn-ghost">About Exami</a>
           </div>
-
-          <h1 class="hero-title" data-reveal data-reveal-delay="100">
-            Building India's Future
-            <span class="gradient-text">Examination Infrastructure</span>
-          </h1>
-
-          <p class="hero-subtitle" data-reveal data-reveal-delay="200">
-            Phase 1: Pre & post exam lifecycle. Phase 2: test-center operations. Phase 3: MEERA — AI to prevent leaks with dynamic question banks.
-          </p>
+        </div>
+        <div>
+          <div class="visual" aria-hidden="true">Solid preview • No gradients</div>
         </div>
       </div>
     </section>
 
-    <!-- Roadmap Section -->
-    <section class="section section-alt">
+    <!-- Timeline: Early 2025 → 2026 & Ahead -->
+    <section id="roadmap" class="timeline" aria-labelledby="timeline-title">
       <div class="container">
-        <h2 id="phases" data-reveal>Roadmap</h2>
-        <div class="roadmap-container" data-reveal data-reveal-delay="100">
-          <div class="roadmap-item">
-            <div class="roadmap-phase">
-              <span class="phase-number">1</span>
-              <h3>Phase 1</h3>
-            </div>
-            <p>Application → Admit card → Results (Exami ID based)</p>
-            <div class="phase-status in-development">In Development</div>
-          </div>
-
-          <div class="roadmap-item">
-            <div class="roadmap-phase">
-              <span class="phase-number">2</span>
-              <h3>Phase 2</h3>
-            </div>
-            <p>RFID/bio entry, seat allotment, center management</p>
-            <div class="phase-status planned">Planned</div>
-          </div>
-
-          <div class="roadmap-item">
-            <div class="roadmap-phase">
-              <span class="phase-number">3</span>
-              <h3>Phase 3 (MEERA)</h3>
-            </div>
-            <p>AI for secure question generation and delivery</p>
-            <div class="phase-status future">Future</div>
-          </div>
+        <div class="timeline-header">
+          <h2 id="timeline-title" class="timeline-title">Roadmap to a Unified Exam Infrastructure</h2>
+          <p class="timeline-subtitle">Accessible interactions, keyboard support, and motion that respects user preferences.</p>
         </div>
-      </div>
-    </section>
+        <div class="timeline-wrap">
+          <div class="timeline-rail" aria-hidden="true">
+            <div class="rail"><div class="progress" style="height:0"></div></div>
+          </div>
+          <ol class="timeline-list" role="list">
+            <li class="timeline-item" data-observe>
+              <div class="timeline-marker"><span class="timeline-dot"></span></div>
+              <div class="timeline-content">
+                <div class="timeline-meta"><span class="material-icons" aria-hidden="true">lightbulb</span> Early 2025 • Ideation</div>
+                <div class="timeline-heading">Problem Discovery and Concept Validation</div>
+                <p class="timeline-copy">Interviewed students, institutions, and policymakers; mapped fragmentation across application systems; identified reliability, accessibility, and security as the core pillars for Exami.</p>
+                <div class="media-grid" aria-hidden="true">
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                </div>
+                <button class="timeline-toggle" aria-expanded="false" aria-controls="details-1">Details <span class="material-icons" aria-hidden="true">expand_more</span></button>
+                <div id="details-1" class="timeline-details" hidden>
+                  <span class="pill">Stakeholder interviews (6 states)</span>
+                  <span class="pill">Unified ID spec</span>
+                  <span class="pill">Compliance baseline</span>
+                </div>
+              </div>
+            </li>
 
-    <!-- Technology Section -->
-    <section class="features-section">
-      <div class="container">
-        <div class="section-header" data-reveal>
-          <h2 class="section-title">Powered by Advanced Technology</h2>
-          <p class="section-subtitle">Cutting-edge solutions for modern examination challenges</p>
+            <li class="timeline-item" data-observe>
+              <div class="timeline-marker"><span class="timeline-dot"></span></div>
+              <div class="timeline-content">
+                <div class="timeline-meta"><span class="material-icons" aria-hidden="true">science</span> Mid 2025 • Planning & Research</div>
+                <div class="timeline-heading">Architecture, Standards, and Partnerships</div>
+                <p class="timeline-copy">Finalized system architecture for nationwide scale; researched integrations with Aadhaar/DigiLocker; began MoUs with pilot institutions and state boards.</p>
+                <div class="media-grid" aria-hidden="true">
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                </div>
+                <button class="timeline-toggle" aria-expanded="false" aria-controls="details-2">Details <span class="material-icons" aria-hidden="true">expand_more</span></button>
+                <div id="details-2" class="timeline-details" hidden>
+                  <span class="pill">Data residency (India)</span>
+                  <span class="pill">Security controls</span>
+                  <span class="pill">3 pilot institutions</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="timeline-item" data-observe>
+              <div class="timeline-marker"><span class="timeline-dot"></span></div>
+              <div class="timeline-content">
+                <div class="timeline-meta"><span class="material-icons" aria-hidden="true">build</span> Spring 2025 • MVP in Development</div>
+                <div class="timeline-heading">Exami ID, Applications, Proctored Assessments</div>
+                <p class="timeline-copy">Built core flows: unified Exami ID, application auto-fill, secure submissions, and AI-proctored exams. Added result delivery and certificate vault.</p>
+                <div class="media-grid" aria-hidden="true">
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                </div>
+                <button class="timeline-toggle" aria-expanded="false" aria-controls="details-3">Details <span class="material-icons" aria-hidden="true">expand_more</span></button>
+                <div id="details-3" class="timeline-details" hidden>
+                  <span class="pill">Accessible UI</span>
+                  <span class="pill">60fps target</span>
+                  <span class="pill">Observability</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="timeline-item" data-observe>
+              <div class="timeline-marker"><span class="timeline-dot"></span></div>
+              <div class="timeline-content">
+                <div class="timeline-meta"><span class="material-icons" aria-hidden="true">rocket_launch</span> 2026 & Ahead • Future Rollout</div>
+                <div class="timeline-heading">State Pilots, National Programs, and Beta Iterations</div>
+                <p class="timeline-copy">Expand pilots to multi-state programs, refine center operations, and roll out public beta with transparent SLAs and security posture.</p>
+                <div class="media-grid" aria-hidden="true">
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                  <div class="media" data-parallax></div>
+                </div>
+                <button class="timeline-toggle" aria-expanded="false" aria-controls="details-4">Details <span class="material-icons" aria-hidden="true">expand_more</span></button>
+                <div id="details-4" class="timeline-details" hidden>
+                  <span class="pill">State pilots</span>
+                  <span class="pill">Center operations</span>
+                  <span class="pill">Security audits</span>
+                </div>
+              </div>
+            </li>
+          </ol>
         </div>
-
-        <div class="bento-grid" data-reveal data-reveal-delay="200">
-          <div class="bento-item large" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">🤖</div>
-              <h3 class="bento-title">AI-Powered Proctoring</h3>
-              <p class="bento-description">Advanced AI monitors examinations in real-time, detecting suspicious behavior while maintaining student privacy and fairness.</p>
-            </div>
-          </div>
-
-          <div class="bento-item medium" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">🔐</div>
-              <h3 class="bento-title">Bank-Grade Security</h3>
-              <p class="bento-description">End-to-end encryption and secure infrastructure protect all examination data.</p>
-            </div>
-          </div>
-
-          <div class="bento-item medium" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">⚡</div>
-              <h3 class="bento-title">Lightning Fast</h3>
-              <p class="bento-description">Sub-second response times for seamless user experience at scale.</p>
-            </div>
-          </div>
-
-          <div class="bento-item small" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">🌐</div>
-              <h3 class="bento-title">Global Scale</h3>
-              <p class="bento-description">Serve millions of users across India simultaneously.</p>
-            </div>
-          </div>
-
-          <div class="bento-item small" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">📊</div>
-              <h3 class="bento-title">Real-time Analytics</h3>
-              <p class="bento-description">Comprehensive insights and reporting for all stakeholders.</p>
-            </div>
-          </div>
-
-          <div class="bento-item wide" data-tilt>
-            <div class="bento-content">
-              <div class="bento-icon">🎯</div>
-              <h3 class="bento-title">Adaptive Testing</h3>
-              <p class="bento-description">AI adjusts question difficulty based on student responses for personalized assessment experience.</p>
-            </div>
-          </div>
-        </div>
+        <p class="kbd-nav" aria-live="polite">Tip: Use Tab/Shift+Tab to focus a step, Enter to expand, and Arrow Up/Down to move between steps.</p>
       </div>
     </section>
   </main>
-  <!-- Footer -->
+
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -265,7 +253,6 @@
             <a href="#" class="social-link">GitHub</a>
           </div>
         </div>
-
         <div class="footer-links">
           <div class="footer-column">
             <h4 class="footer-title">Product</h4>
@@ -274,14 +261,12 @@
             <a href="#pricing" class="footer-link">Pricing</a>
             <a href="./about.html" class="footer-link" data-nav>About</a>
           </div>
-
           <div class="footer-column">
             <h4 class="footer-title">Solutions</h4>
             <a href="./student.html" class="footer-link" data-nav>For Students</a>
             <a href="./institution.html" class="footer-link" data-nav>For Institutions</a>
             <a href="./government.html" class="footer-link" data-nav>For Government</a>
           </div>
-
           <div class="footer-column">
             <h4 class="footer-title">Support</h4>
             <a href="#" class="footer-link">Documentation</a>
@@ -289,7 +274,6 @@
             <a href="#" class="footer-link">Contact</a>
             <a href="#" class="footer-link">Status</a>
           </div>
-
           <div class="footer-column">
             <h4 class="footer-title">Legal</h4>
             <a href="#" class="footer-link">Privacy</a>
@@ -298,12 +282,101 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p class="footer-copyright">© <span id="year">2024</span> Exami. All rights reserved.</p>
+        <p class="footer-copyright">© <span id="year">2025</span> Exami. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
   <script src="./app.js" defer></script>
+  <script>
+    // Accessible timeline interactions with reduced-motion awareness + scroll animations
+    document.addEventListener('DOMContentLoaded', function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const items = Array.from(document.querySelectorAll('.timeline-item'));
+      const toggles = document.querySelectorAll('.timeline-toggle');
+      const rail = document.querySelector('.timeline-rail .rail');
+      const progress = document.querySelector('.timeline-rail .progress');
+      const parallaxTargets = document.querySelectorAll('[data-parallax]');
+
+      // Reveal on intersection
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: prefersReduced ? 0 : 0.2 });
+      items.forEach(item => io.observe(item));
+
+      // Expand/collapse
+      toggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const controls = btn.getAttribute('aria-controls');
+          const details = document.getElementById(controls);
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          if (!isOpen) {
+            details.hidden = false;
+            details.classList.add('open');
+          } else {
+            details.classList.remove('open');
+            details.hidden = true;
+          }
+        });
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+
+      // Keyboard navigation between items
+      const focusable = items.map(i => i.querySelector('.timeline-toggle'));
+      document.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+        const active = document.activeElement;
+        const idx = focusable.indexOf(active);
+        if (idx === -1) return;
+        e.preventDefault();
+        const nextIdx = e.key === 'ArrowDown' ? Math.min(idx + 1, focusable.length - 1) : Math.max(idx - 1, 0);
+        focusable[nextIdx].focus();
+      });
+
+      // Scroll progress for sticky rail
+      const updateProgress = () => {
+        if (!rail || !progress) return;
+        const rect = rail.getBoundingClientRect();
+        const viewport = window.innerHeight;
+        const visible = Math.min(Math.max(viewport - Math.max(rect.top, 0), 0), rect.height);
+        const ratio = rect.height ? visible / rect.height : 0;
+        progress.style.height = (ratio * 100) + '%';
+      };
+
+      // Parallax on media blocks (subtle, disabled if reduced motion)
+      const updateParallax = () => {
+        if (prefersReduced) return;
+        parallaxTargets.forEach((el, idx) => {
+          const r = el.getBoundingClientRect();
+          const center = window.innerHeight / 2;
+          const delta = (r.top + r.height / 2) - center;
+          const strength = Math.max(Math.min(delta / 20, 12), -12);
+          el.style.transform = `translateY(${strength}px)`;
+        });
+      };
+
+      const onScroll = () => {
+        updateProgress();
+        updateParallax();
+      };
+
+      updateProgress();
+      updateParallax();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', updateProgress);
+    });
+  </script>
 </body>
 </html>
