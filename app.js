@@ -65,7 +65,9 @@
     document.documentElement.style.scrollBehavior = 'auto';
   }
 
-  // Mobile menu toggle - Fix selector mismatch
+  // Mobile menu toggle - OLD NAVIGATION CODE (REPLACED BY FLOATING NAVBAR)
+  // This code is no longer needed as navigation is handled by floating-navbar.js
+  /*
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const nav = document.querySelector('.nav');
 
@@ -95,6 +97,7 @@
       }
     });
   }
+  */
 
   // Page transition on navigation (internal links)
   const overlay = document.createElement('div');
@@ -105,17 +108,55 @@
     try { const u = new URL(href, window.location.href); return u.origin === location.origin; } catch { return false; }
   }
 
+  // Handle navigation clicks - only intercept clicks on data-nav links
   document.addEventListener('click', (e) => {
     const a = e.target instanceof Element ? e.target.closest('a[data-nav]') : null;
     if (!a) return;
     const href = a.getAttribute('href') || '#';
+    
     // Hash links on same page should scroll normally
     if (href.startsWith('#')) return;
+    
+    // Check if this is an internal link
     if (isInternal(href)) {
       e.preventDefault();
-      document.body.classList.add('leaving');
-      setTimeout(() => { window.location.href = href; }, 220);
+      
+      try {
+        const currentPath = window.location.pathname;
+        const targetPath = new URL(href, window.location.href).pathname;
+        
+        // Only add transition if navigating to a different page
+        if (currentPath !== targetPath) {
+          // Clear hash from current URL if present
+          if (window.location.hash) {
+            const baseUrl = window.location.href.split('#')[0];
+            window.history.replaceState(null, '', baseUrl);
+          }
+          
+          // Add page transition effect
+          document.body.classList.add('leaving');
+          setTimeout(() => { 
+            // Navigate to new page - this will cause a full page reload
+            window.location.href = href;
+          }, 220);
+        } else {
+          // Same page, just update hash if needed
+          if (href.includes('#')) {
+            window.location.hash = href.split('#')[1];
+          }
+        }
+      } catch (err) {
+        // If URL parsing fails, just navigate normally
+        window.location.href = href;
+      }
     }
+  });
+
+  // Ensure page stays on current URL on refresh - this should happen naturally
+  // but we'll add a check to prevent any unwanted redirects
+  window.addEventListener('beforeunload', () => {
+    // Remove leaving class if page is unloading
+    document.body.classList.remove('leaving');
   });
 
   // On-scroll reveal animations
@@ -373,10 +414,24 @@
           this.mouseX = 0;
           this.mouseY = 0;
           this.isMoving = false;
+          this.isMobile = this.checkIfMobile();
           this.init();
+      }
+
+      checkIfMobile() {
+          // Check for touch device or small screen
+          return window.innerWidth <= 768 || 
+                 ('ontouchstart' in window || navigator.maxTouchPoints > 0);
       }
   
       init() {
+          // Skip initialization on mobile devices
+          if (this.isMobile) {
+              // Restore default cursor on mobile
+              document.body.style.cursor = 'auto';
+              return;
+          }
+
           // Get existing cursor element
           this.cursor = document.querySelector('.cursor');
           
@@ -399,20 +454,78 @@
           
           // Show cursor when mouse enters the page
           document.addEventListener('mouseenter', () => {
-              this.cursor.style.opacity = '1';
+              if (this.cursor) {
+                  this.cursor.style.opacity = '1';
+              }
           });
           
           // Hide cursor when mouse leaves the page
           document.addEventListener('mouseleave', () => {
-              this.cursor.style.opacity = '0';
+              if (this.cursor) {
+                  this.cursor.style.opacity = '0';
+              }
           });
+
+          // Handle hover effects on interactive elements
+          this.setupHoverEffects();
+      }
+
+      setupHoverEffects() {
+          if (!this.cursor) return;
+
+          // Setup hover effects using mouseover for better compatibility
+          const handleMouseOver = (e) => {
+              if (!this.cursor) return;
+              const target = e.target;
+              
+              // Check if hovering over interactive elements
+              const isInteractive = target.matches('a, button, .btn, .interactive, .card, .feature-card, .solution-card, .floating-nav-item, .floating-nav-login, .floating-nav-theme-toggle, .floating-dropdown-item, input, textarea, select') ||
+                                  target.closest('a, button, .btn, .interactive, .card, .feature-card, .solution-card');
+              
+              if (isInteractive) {
+                  this.cursor.style.transform = `translate(${this.mouseX - 8}px, ${this.mouseY - 8}px) scale(2)`;
+                  this.cursor.style.background = '#1575FF';
+                  this.cursor.style.opacity = '0.5';
+              }
+          };
+
+          const handleMouseOut = (e) => {
+              if (!this.cursor) return;
+              const target = e.target;
+              
+              // Check if leaving interactive elements
+              const isInteractive = target.matches('a, button, .btn, .interactive, .card, .feature-card, .solution-card, .floating-nav-item, .floating-nav-login, .floating-nav-theme-toggle, .floating-dropdown-item, input, textarea, select') ||
+                                  target.closest('a, button, .btn, .interactive, .card, .feature-card, .solution-card');
+              
+              if (isInteractive && !target.contains(e.relatedTarget)) {
+                  this.cursor.style.transform = `translate(${this.mouseX - 4}px, ${this.mouseY - 4}px) scale(1)`;
+                  this.cursor.style.background = '#3b82f6';
+                  this.cursor.style.opacity = '1';
+              }
+          };
+
+          // Use capture phase for better event handling
+          document.addEventListener('mouseover', handleMouseOver, true);
+          document.addEventListener('mouseout', handleMouseOut, true);
       }
 
       updateCursorPosition() {
-          if (!this.cursor) return;
+          if (!this.cursor || this.isMobile) return;
           
           // Use transform for better performance
-          this.cursor.style.transform = `translate(${this.mouseX - 4}px, ${this.mouseY - 4}px)`;
+          const currentTransform = this.cursor.style.transform;
+          if (!currentTransform.includes('scale')) {
+              this.cursor.style.transform = `translate(${this.mouseX - 4}px, ${this.mouseY - 4}px)`;
+          } else {
+              // Preserve scale if hover effect is active
+              const scaleMatch = currentTransform.match(/scale\(([\d.]+)\)/);
+              const scale = scaleMatch ? scaleMatch[1] : 1;
+              if (scale > 1) {
+                  this.cursor.style.transform = `translate(${this.mouseX - 8}px, ${this.mouseY - 8}px) scale(${scale})`;
+              } else {
+                  this.cursor.style.transform = `translate(${this.mouseX - 4}px, ${this.mouseY - 4}px)`;
+              }
+          }
       }
 
       // Throttle function to limit function calls
@@ -425,6 +538,29 @@
                   func.apply(context, args);
                   inThrottle = true;
                   setTimeout(() => inThrottle = false, limit);
+              }
+          }
+      }
+
+      // Handle window resize to re-check mobile status
+      handleResize() {
+          const wasMobile = this.isMobile;
+          this.isMobile = this.checkIfMobile();
+          
+          if (wasMobile !== this.isMobile) {
+              if (this.isMobile) {
+                  // Switched to mobile - disable cursor
+                  if (this.handleMouseMove) {
+                      document.removeEventListener('mousemove', this.handleMouseMove);
+                  }
+                  document.body.style.cursor = 'auto';
+                  if (this.cursor) {
+                      this.cursor.style.display = 'none';
+                      this.cursor.style.opacity = '0';
+                  }
+              } else {
+                  // Switched to desktop - reinitialize
+                  this.init();
               }
           }
       }
@@ -801,10 +937,13 @@
   }
   
   // ===== NAVIGATION =====
+  // OLD NAVIGATION CLASS - REPLACED BY FLOATING NAVBAR
+  // Navigation is now handled by components/floating-navbar.js
+  /*
   class Navigation {
       constructor() {
           this.nav = document.querySelector('.nav');
-          this.mobileToggle = document.querySelector('.mobile-menu-toggle'); // Fixed selector
+          this.mobileToggle = document.querySelector('.mobile-menu-toggle');
           this.dropdowns = document.querySelectorAll('.dropdown');
           this.init();
       }
@@ -855,6 +994,7 @@
           });
       }
   }
+  */
   
   // ===== MOCKUP ANIMATIONS =====
   class MockupAnimations {
@@ -992,6 +1132,86 @@
       }
   }
   
+  // ===== FEATURES CAROUSEL =====
+  class FeaturesCarousel {
+      constructor() {
+          this.wrapper = document.querySelector('.features-carousel-wrapper');
+          this.track = document.querySelector('.features-carousel-track');
+          this.prevBtn = document.querySelector('.carousel-nav-prev');
+          this.nextBtn = document.querySelector('.carousel-nav-next');
+          this.cards = document.querySelectorAll('.feature-card-horizontal');
+          this.currentIndex = 0;
+          this.cardWidth = 0;
+          this.gap = 32; // var(--space-xl)
+          
+          if (this.wrapper && this.track && this.cards.length > 0) {
+              this.init();
+          }
+      }
+      
+      init() {
+          this.updateCardWidth();
+          this.setupEventListeners();
+          window.addEventListener('resize', throttle(() => {
+              this.updateCardWidth();
+              this.scrollToIndex(this.currentIndex);
+          }, 250));
+      }
+      
+      updateCardWidth() {
+          if (this.cards.length > 0) {
+              const firstCard = this.cards[0];
+              const style = window.getComputedStyle(firstCard);
+              this.cardWidth = firstCard.offsetWidth + this.gap;
+          }
+      }
+      
+      setupEventListeners() {
+          if (this.prevBtn) {
+              this.prevBtn.addEventListener('click', () => this.prev());
+          }
+          
+          if (this.nextBtn) {
+              this.nextBtn.addEventListener('click', () => this.next());
+          }
+      }
+      
+      scrollToIndex(index) {
+          if (!this.track || this.cards.length === 0) return;
+          
+          const maxIndex = Math.max(0, this.cards.length - this.getVisibleCards());
+          this.currentIndex = Math.max(0, Math.min(index, maxIndex));
+          
+          const translateX = -(this.currentIndex * this.cardWidth);
+          this.track.style.transform = `translateX(${translateX}px)`;
+      }
+      
+      getVisibleCards() {
+          if (window.innerWidth <= 768) return 1;
+          return 3;
+      }
+      
+      next() {
+          const maxIndex = Math.max(0, this.cards.length - this.getVisibleCards());
+          if (this.currentIndex < maxIndex) {
+              this.scrollToIndex(this.currentIndex + 1);
+          } else {
+              // Loop to start
+              this.scrollToIndex(0);
+          }
+      }
+      
+      prev() {
+          if (this.currentIndex > 0) {
+              this.scrollToIndex(this.currentIndex - 1);
+          } else {
+              // Loop to end
+              const maxIndex = Math.max(0, this.cards.length - this.getVisibleCards());
+              this.scrollToIndex(maxIndex);
+          }
+      }
+  }
+  
   // ===== INITIALIZATION =====
   class ExamiWebsite {
       constructor() {
@@ -1013,14 +1233,31 @@
               // Initialize all components
               this.components.push(new ErrorHandler());
               this.components.push(new PerformanceOptimizer());
-              this.components.push(new CustomCursor());
-              this.components.push(new Navigation());
+              
+              // Initialize custom cursor and store reference for resize handling
+              const customCursor = new CustomCursor();
+              this.components.push(customCursor);
+              
+              // Add resize handler for cursor
+              let resizeTimeout;
+              window.addEventListener('resize', () => {
+                  clearTimeout(resizeTimeout);
+                  resizeTimeout = setTimeout(() => {
+                      if (customCursor && typeof customCursor.handleResize === 'function') {
+                          customCursor.handleResize();
+                      }
+                  }, 250);
+              });
+              
+              // Navigation replaced by FloatingNav - see components/floating-navbar.js
+              // this.components.push(new Navigation());
               this.components.push(new ScrollAnimations());
               this.components.push(new AnimatedCounters());
               this.components.push(new Accordion());
               this.components.push(new CardInteractions());
               this.components.push(new FormHandler());
               this.components.push(new MockupAnimations());
+              this.components.push(new FeaturesCarousel());
               
               console.log('Exami website initialized successfully');
           } catch (error) {

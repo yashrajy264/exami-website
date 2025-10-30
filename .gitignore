@@ -1,0 +1,25 @@
+# Next.js
+.next/
+out/
+node_modules/
+.next
+out
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Build
+dist/
+build/
+
