@@ -276,25 +276,10 @@
     <div class="cursor-magnetic"></div>
     
     
-    <!-- About Hero Section -->
-    <section class="about-hero">
-        <div class="container">
-            <div class="hero-badge" data-reveal>
-                <span class="badge-dot"></span>
-                Our Story
-            </div>
-            
-            <h1 class="hero-title" data-reveal data-reveal-delay="100">
-                Revolutionizing India's
-                <span class="gradient-text">Examination Ecosystem</span>
-            </h1>
-            
-            <p class="hero-subtitle" data-reveal data-reveal-delay="200">
-                Born from the frustration of millions of students facing server crashes, 
-                document chaos, and endless registrations. We're building the future of examinations.
-            </p>
-        </div>
-    </section>
+    <!-- About Hero Section (React Component) -->
+    <link rel="stylesheet" href="/dist/assets/about-hero.css">
+    <div id="about-hero-root"></div>
+    <script type="module" src="/dist/about-hero.js"></script>
     
     <!-- Company Story Section -->
     <section class="story-section">
@@ -338,17 +323,8 @@
                 <p class="text-base-content/80 text-xl">Driven by vision. United by purpose.</p>
                 <p class="text-base-content/70 mt-4 mx-auto max-w-3xl">Four minds, one mission — to make exam applications as simple and transparent as booking a flight.</p>
             </div>
-            <!-- Mobile carousel controls -->
-            <div class="sm:hidden mb-4 flex items-center justify-between">
-                <button id="teamPrev" class="btn btn-ghost btn-sm" aria-label="Previous team member">
-                    <span class="material-icons">chevron_left</span>
-                </button>
-                <button id="teamNext" class="btn btn-ghost btn-sm" aria-label="Next team member">
-                    <span class="material-icons">chevron_right</span>
-                </button>
-            </div>
             <!-- Founders Grid (4 cards) / Mobile acts as carousel -->
-            <div id="teamCarousel" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10 overflow-hidden">
+            <div id="teamCarousel" class="grid grid-cols-1 gap-8 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10 overflow-hidden">
                 <!-- Yashraj -->
                 <div class="founder-card card border border-[#E5E7EB] hover:border-[#1F75FF] h-max shadow-none transition-all duration-200">
                     <figure class="bg-white pt-6">
@@ -358,10 +334,11 @@
                         <h3 class="text-base-content text-lg font-bold">Yashraj Singh Yadav</h3>
                         <p class="text-[#1F75FF] font-semibold">Founder & CEO</p>
                         <p class="text-base-content/80">Vision in action.</p>
-                        <button class="toggle-bio mt-1 inline-flex items-center gap-1 text-sm text-base-content/60" aria-expanded="false" aria-controls="bio-yashraj">
-                            <span class="material-icons transition-transform">expand_more</span> Read bio
-                        </button>
-                        <p id="bio-yashraj" class="bio hidden italic text-base-content/60">Yashraj leads Exami’s product and direction, turning complex exam systems into seamless digital experiences.</p>
+                        <div class="mt-1">
+                            <button class="founder-open inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E5E7EB] text-base-content/70 hover:text-[#1F75FF] hover:border-[#1F75FF] transition" data-founder="yashraj" aria-label="Open bio">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- Shivani -->
@@ -373,10 +350,11 @@
                         <h3 class="text-base-content text-lg font-bold">Shivani Tomar</h3>
                         <p class="text-[#1F75FF] font-semibold">Co-Founder & CMO</p>
                         <p class="text-base-content/80">The voice of Exami.</p>
-                        <button class="toggle-bio mt-1 inline-flex items-center gap-1 text-sm text-base-content/60" aria-expanded="false" aria-controls="bio-shivani">
-                            <span class="material-icons transition-transform">expand_more</span> Read bio
-                        </button>
-                        <p id="bio-shivani" class="bio hidden italic text-base-content/60">Shivani shapes the brand narrative, connecting with students and institutions through clarity and creativity.</p>
+                        <div class="mt-1">
+                            <button class="founder-open inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E5E7EB] text-base-content/70 hover:text-[#1F75FF] hover:border-[#1F75FF] transition" data-founder="shivani" aria-label="Open bio">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- Abdul -->
@@ -388,10 +366,11 @@
                         <h3 class="text-base-content text-lg font-bold">Abdul Gaffar Khan</h3>
                         <p class="text-[#1F75FF] font-semibold">Co-Founder & CBO</p>
                         <p class="text-base-content/80">Growth architect.</p>
-                        <button class="toggle-bio mt-1 inline-flex items-center gap-1 text-sm text-base-content/60" aria-expanded="false" aria-controls="bio-abdul">
-                            <span class="material-icons transition-transform">expand_more</span> Read bio
-                        </button>
-                        <p id="bio-abdul" class="bio hidden italic text-base-content/60">Abdul drives partnerships and strategy, building trusted bridges between innovation and education.</p>
+                        <div class="mt-1">
+                            <button class="founder-open inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E5E7EB] text-base-content/70 hover:text-[#1F75FF] hover:border-[#1F75FF] transition" data-founder="abdul" aria-label="Open bio">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- Sarthak -->
@@ -403,16 +382,48 @@
                         <h3 class="text-base-content text-lg font-bold">Sarthak Mutreja</h3>
                         <p class="text-[#1F75FF] font-semibold">Co-Founder & CTO</p>
                         <p class="text-base-content/80">The tech backbone.</p>
-                        <button class="toggle-bio mt-1 inline-flex items-center gap-1 text-sm text-base-content/60" aria-expanded="false" aria-controls="bio-sarthak">
-                            <span class="material-icons transition-transform">expand_more</span> Read bio
-                        </button>
-                        <p id="bio-sarthak" class="bio hidden italic text-base-content/60">An engineer from NIT Bhopal, Sarthak leads product architecture and system innovation — ensuring Exami runs fast, secure, and future-ready.</p>
+                        <div class="mt-1">
+                            <button class="founder-open inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E5E7EB] text-base-content/70 hover:text-[#1F75FF] hover:border-[#1F75FF] transition" data-founder="sarthak" aria-label="Open bio">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <!-- Mobile carousel controls -->
+            <div class="sm:hidden mt-4 flex justify-end gap-3">
+                <button id="teamPrev" class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#E5E7EB] bg-white text-base-content/70 hover:text-[#1F75FF] hover:border-[#1F75FF] transition shadow-sm" aria-label="Previous team member">
+                    <span class="material-icons text-xl">chevron_left</span>
+                </button>
+                <button id="teamNext" class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#E5E7EB] bg-white text-base-content/70 hover:text-[#1F75FF] hover:border-[#1F75FF] transition shadow-sm" aria-label="Next team member">
+                    <span class="material-icons text-xl">chevron_right</span>
+                </button>
             </div>
             <p class="mt-12 text-center text-base-content/80 text-lg">One platform. Every exam. Infinite possibilities.</p>
         </div>
     </section>
+
+    <!-- Founder Modal -->
+    <div id="founderModal" class="fixed inset-0 z-[6000] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/50" data-close></div>
+        <div class="relative w-full max-w-[1200px] rounded-2xl bg-white py-8 px-6 sm:py-10 sm:px-10 shadow-2xl border border-[#E5E7EB] max-h-[90vh] overflow-y-auto">
+            <button class="hidden sm:inline-flex absolute top-3 right-3 items-center justify-center w-9 h-9 rounded-full border border-[#E5E7EB] text-base-content/70 hover:text-[#1F75FF] hover:border-[#1F75FF]" data-close aria-label="Close">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+            </button>
+            <div class="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-8">
+                <div class="relative">
+                    <img id="founderImg" alt="Founder photo" class="w-full sm:w-72 md:w-80 rounded-lg border border-[#E5E7EB] object-contain bg-white flex-shrink-0" />
+                    <button class="modal-close-mobile sm:hidden absolute top-2 right-2 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white border border-[#E5E7EB] text-base-content/70 hover:text-[#1F75FF] hover:border-[#1F75FF] shadow-md" aria-label="Close">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6l-12 12"/></svg>
+                    </button>
+                </div>
+                <div class="flex-1 self-center">
+                    <h3 id="founderTitle" class="text-lg sm:text-xl font-bold text-[#1F75FF]"></h3>
+                    <p id="founderLong" class="mt-3 leading-7 sm:leading-8 text-base-content/80"></p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     
     
@@ -515,18 +526,65 @@
       });
       // Team section interactions
       document.addEventListener('DOMContentLoaded', function () {
-        // Expand/collapse bios
-        document.querySelectorAll('.toggle-bio').forEach(function(btn){
+        // Founder modal data and handlers
+        const founders = {
+          yashraj: {
+            title: 'Yashraj Singh Yadav — Founder & CEO',
+            img: './Mastheads/founder_1.png',
+            long: 'An innovative visual designer and product thinker, Yashraj Singh Yadav brings over four years of experience creating impactful design solutions for global brands across B2B, eCommerce, and marketing industries. A specialist in product design and web applications, he excels in developing intuitive wireframes, scalable UI systems, and complete design migrations. Having contributed to high-profile projects such as Costco US Magazine, he combines creativity with strategy — leveraging advanced AI-driven tools to streamline workflows and elevate user engagement. At Exami, Yashraj leads vision, product strategy, and user experience — turning the idea of exam simplification into a global movement.'
+          },
+          shivani: {
+            title: 'Shivani Tomar — Co-Founder & CMO',
+            img: './Mastheads/founder_2.png',
+            long: 'A certified HubSpot marketer and McKinsey Forward Program alumna, Shivani Tomar blends analytical precision with creative storytelling. With five years of experience as a teacher and a background in government exam preparation, she deeply understands the student mindset — making her marketing approach empathetic and purpose-driven. At Exami, Shivani shapes the brand narrative, drives community outreach, and ensures that the platform communicates with authenticity and clarity. Her work bridges education, strategy, and design — giving Exami its voice and heart.'
+          },
+          abdul: {
+            title: 'Abdul Gaffar Khan — Co-Founder & CBO',
+            img: './Mastheads/founder_3.png',
+            long: 'A product manager and entrepreneur at heart, Abdul Gaffar Khan brings a unique blend of marketing insight and product strategy to Exami. Holding an MBA in Entrepreneurship from the Schulich School of Business (York University), he specializes in building engaging AI-driven products from concept to launch. Passionate about community-led innovation, he leads the Bangalore chapter of The AI Collective, fostering collaboration in India’s growing AI ecosystem. At Exami, Abdul drives business growth, partnerships, and strategic direction — ensuring the platform scales with purpose, performance, and impact.'
+          },
+          sarthak: {
+            title: 'Sarthak Mutreja — Co-Founder & CTO',
+            img: './Mastheads/founder_4.png',
+            long: 'A hardware engineer and technologist from Maulana Azad National Institute of Technology (NIT Bhopal), Sarthak Mutreja brings engineering precision and innovation to Exami’s tech foundation. Currently contributing at Netradyne as a Hardware Engineer, he works on developing and testing advanced embedded systems and intelligent hardware solutions. His experience in electronics, communication systems, and applied engineering ensures that Exami remains secure, scalable, and technically robust. As CTO, Sarthak leads the architectural backbone of Exami — bridging hardware reliability with digital performance.'
+          }
+        };
+        const modal = document.getElementById('founderModal');
+        const modalImg = document.getElementById('founderImg');
+        const modalTitle = document.getElementById('founderTitle');
+        const modalLong = document.getElementById('founderLong');
+        let lastTrigger = null;
+        function openModal(key, trigger){
+          const data = founders[key];
+          if (!data || !modal) return;
+          modalImg.src = data.img;
+          modalImg.alt = data.title;
+          modalTitle.textContent = data.title;
+          modalLong.textContent = data.long;
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          lastTrigger = trigger || null;
+        }
+        function closeModal(){
+          if (!modal) return;
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+          if (lastTrigger) { try { lastTrigger.focus(); } catch(_) {} }
+        }
+        document.querySelectorAll('.founder-open').forEach(function(btn){
           btn.addEventListener('click', function(){
-            const expanded = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', String(!expanded));
-            const icon = btn.querySelector('.material-icons');
-            if (icon) icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
-            const targetId = btn.getAttribute('aria-controls');
-            const bio = document.getElementById(targetId);
-            if (bio) bio.classList.toggle('hidden');
+            const key = btn.getAttribute('data-founder');
+            openModal(key, btn);
           });
         });
+        if (modal) {
+          modal.addEventListener('click', function(e){ if (e.target.matches('[data-close]') || e.target.closest('[data-close]')) closeModal(); });
+          const mobileClose = modal.querySelector('.modal-close-mobile');
+          if (mobileClose) {
+            mobileClose.addEventListener('click', function(e){ e.stopPropagation(); closeModal(); });
+          }
+          document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+        }
 
         // Mobile carousel
         const isMobile = () => window.matchMedia('(max-width: 639px)').matches;
@@ -534,15 +592,30 @@
         const cards = Array.from(carousel ? carousel.querySelectorAll('.founder-card') : []);
         let index = 0;
         function updateCarousel(){
-          if (!carousel || !isMobile()) { if (carousel) carousel.style.transform = ''; return; }
-          const width = carousel.clientWidth;
-          carousel.style.transition = 'transform 300ms ease';
-          carousel.style.transform = `translateX(-${index * width}px)`;
-          // set each card width to carousel width on mobile
-          cards.forEach(function(card){ card.style.minWidth = width + 'px'; });
+          if (!carousel || !isMobile()) { 
+            if (carousel) {
+              carousel.style.transform = '';
+              carousel.style.display = '';
+              carousel.style.gap = '';
+              cards.forEach(function(card){ card.style.minWidth = ''; card.style.maxWidth = ''; });
+            }
+            return; 
+          }
+          const viewportWidth = window.innerWidth;
+          const cardWidth = Math.floor(viewportWidth * 0.75); // 75% of viewport width on mobile
+          const gap = 32; // 2rem gap between cards on mobile
+          // set each card width to 75% of viewport width on mobile
+          cards.forEach(function(card){ 
+            card.style.minWidth = cardWidth + 'px'; 
+            card.style.maxWidth = cardWidth + 'px'; 
+            card.style.flexShrink = '0';
+          });
           // convert container to flex for sliding
           carousel.style.display = 'flex';
-          carousel.style.gap = '0px';
+          carousel.style.gap = gap + 'px';
+          // scroll instead of transform to prevent blank view
+          const left = index * (cardWidth + gap);
+          carousel.scrollTo({ left, behavior: 'smooth' });
         }
         function clamp(val, min, max){ return Math.max(min, Math.min(max, val)); }
         const prevBtn = document.getElementById('teamPrev');
