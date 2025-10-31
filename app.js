@@ -479,7 +479,7 @@
               const target = e.target;
               
               // Check if hovering over interactive elements
-              const isInteractive = target.matches('a, button, .btn, .interactive, .card, .feature-card, .solution-card, .floating-nav-item, .floating-nav-login, .floating-nav-theme-toggle, .floating-dropdown-item, input, textarea, select') ||
+              const isInteractive = target.matches('a, button, .btn, .interactive, .card, .feature-card, .solution-card, .floating-nav-item, .floating-nav-login, .floating-dropdown-item, input, textarea, select') ||
                                   target.closest('a, button, .btn, .interactive, .card, .feature-card, .solution-card');
               
               if (isInteractive) {
@@ -494,7 +494,7 @@
               const target = e.target;
               
               // Check if leaving interactive elements
-              const isInteractive = target.matches('a, button, .btn, .interactive, .card, .feature-card, .solution-card, .floating-nav-item, .floating-nav-login, .floating-nav-theme-toggle, .floating-dropdown-item, input, textarea, select') ||
+              const isInteractive = target.matches('a, button, .btn, .interactive, .card, .feature-card, .solution-card, .floating-nav-item, .floating-nav-login, .floating-dropdown-item, input, textarea, select') ||
                                   target.closest('a, button, .btn, .interactive, .card, .feature-card, .solution-card');
               
               if (isInteractive && !target.contains(e.relatedTarget)) {

@@ -109,19 +109,6 @@ class FloatingNav {
           <img src="exami-logo.webp" alt="Exami Logo" width="100" height="28">
         </a>
         ${navItemsHTML}
-        <button class="floating-nav-theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme">
-          <span class="theme-icon-light" style="opacity: 1; visibility: visible;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="4"/>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
-            </svg>
-          </span>
-          <span class="theme-icon-dark" style="opacity: 0; visibility: hidden; position: absolute;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-            </svg>
-          </span>
-        </button>
         <button class="floating-nav-login" id="floating-nav-login">
           <span>Take Survey</span>
           <span class="login-gradient-line"></span>
@@ -162,22 +149,6 @@ class FloatingNav {
       }
     }
 
-    // Attach theme toggle handler
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    if (themeToggleBtn) {
-      themeToggleBtn.addEventListener('click', () => {
-        if (window.themeToggle) {
-          const newTheme = window.themeToggle.toggle();
-          this.updateThemeIcon(newTheme);
-        }
-      });
-    }
-
-    // Initialize theme icon
-    if (window.themeToggle) {
-      this.updateThemeIcon(window.themeToggle.getCurrentTheme());
-    }
-
     // Attach login button handler (preserve existing functionality)
     const loginBtn = document.getElementById('floating-nav-login');
     if (loginBtn) {
@@ -201,28 +172,6 @@ class FloatingNav {
         }
       });
     });
-  }
-
-  updateThemeIcon(theme) {
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    if (!themeToggleBtn) return;
-
-    const lightIcon = themeToggleBtn.querySelector('.theme-icon-light');
-    const darkIcon = themeToggleBtn.querySelector('.theme-icon-dark');
-
-    if (lightIcon && darkIcon) {
-      if (theme === 'dark') {
-        lightIcon.style.opacity = '0';
-        lightIcon.style.visibility = 'hidden';
-        darkIcon.style.opacity = '1';
-        darkIcon.style.visibility = 'visible';
-      } else {
-        lightIcon.style.opacity = '1';
-        lightIcon.style.visibility = 'visible';
-        darkIcon.style.opacity = '0';
-        darkIcon.style.visibility = 'hidden';
-      }
-    }
   }
 
   attachEventListeners() {
