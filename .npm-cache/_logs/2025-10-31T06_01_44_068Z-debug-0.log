@@ -1,0 +1,18 @@
+0 verbose cli /usr/local/bin/node /usr/local/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@11.5.1
+2 info using node@v24.6.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/yashrajsinghyadav/Documents/exami-website/.npmrc
+5 silly config load:file:/Users/yashrajsinghyadav/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm exec tailwindcss -i ./src/site.css -o ./public/site.css --minify
+8 verbose argv "exec" "--" "tailwindcss" "-i" "./src/site.css" "-o" "./public/site.css" "--minify"
+9 verbose logfile logs-max:10 dir:/Users/yashrajsinghyadav/Documents/exami-website/.npm-cache/_logs/2025-10-31T06_01_44_068Z-
+10 verbose logfile /Users/yashrajsinghyadav/Documents/exami-website/.npm-cache/_logs/2025-10-31T06_01_44_068Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose cwd /Users/yashrajsinghyadav/Documents/exami-website
+13 verbose os Darwin 25.0.0
+14 verbose node v24.6.0
+15 verbose npm  v11.5.1
+16 verbose exit 0
+17 info ok
