@@ -144,7 +144,8 @@ const HeroAbout: React.FC = () => {
               style={{
                 width: '100%',
                 height: '100%',
-                objectFit: 'contain'
+                objectFit: 'contain',
+                display: 'block'
               }}
             />
           </motion.div>
@@ -183,7 +184,8 @@ const HeroAbout: React.FC = () => {
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'contain'
+                  objectFit: 'contain',
+                  display: 'block'
                 }}
               />
             )}
@@ -222,7 +224,8 @@ const HeroAbout: React.FC = () => {
               style={{
                 width: '100%',
                 height: '100%',
-                objectFit: 'contain'
+                objectFit: 'contain',
+                display: 'block'
               }}
             />
           </motion.div>
@@ -261,7 +264,8 @@ const HeroAbout: React.FC = () => {
                 width: '100%',
                 height: '100%',
                 objectFit: 'contain',
-                pointerEvents: 'none'
+                pointerEvents: 'none',
+                display: 'block'
               }}
             />
           </motion.div>
@@ -344,17 +348,19 @@ const HeroAbout: React.FC = () => {
           .drop-zone img {
             width: 100% !important;
             height: 100% !important;
+            object-fit: contain !important;
           }
 
           .exami-draggable {
             width: 64px !important;
             height: 64px !important;
+            bottom: 10% !important;
           }
 
-          .exami-draggable > div {
-            width: 48px !important;
-            height: 48px !important;
-            font-size: 18px !important;
+          .exami-draggable img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
           }
         }
       `}</style>
