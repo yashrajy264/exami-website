@@ -273,8 +273,12 @@ const HeroAbout: React.FC = () => {
           <motion.div
             className="merge-animation"
             style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
               textAlign: 'center',
-              marginTop: '0'
+              marginTop: '0',
+              width: '100%'
             }}
           >
             {showSimpleMessage && (
@@ -291,8 +295,9 @@ const HeroAbout: React.FC = () => {
                   fontWeight: 600,
                   color: '#111111',
                   textAlign: 'center',
-                  marginBottom: showDescription ? '1.5rem' : '0',
-                  marginTop: '0'
+                  marginBottom: showDescription ? '2rem' : '0',
+                  marginTop: '0',
+                  width: '100%'
                 }}
               >
                 It's that simple.
@@ -305,7 +310,8 @@ const HeroAbout: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: prefersReducedMotion ? 0 : 0.8,
-                  ease: 'easeOut'
+                  ease: 'easeOut',
+                  delay: prefersReducedMotion ? 0 : 0.2
                 }}
                 style={{
                   fontSize: '1rem',
@@ -315,7 +321,8 @@ const HeroAbout: React.FC = () => {
                   maxWidth: '800px',
                   margin: '0 auto',
                   lineHeight: '1.6',
-                  padding: '0 1rem'
+                  padding: '0',
+                  width: '100%'
                 }}
               >
                 Exami brings every part of the exam and education process into one simple place. From applying for exams, scholarships, and certifications to managing results and updates — everything happens in one clean, connected platform. No confusion, no endless forms — just a single, unified experience for students, institutions, and educators alike.
