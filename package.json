@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "vite",
+    "build": "vite build",
+    "start": "python3 -m http.server 8000",
     "static": "python3 -m http.server 8000",
     "dev:hero": "vite",
     "build:hero": "vite build"
