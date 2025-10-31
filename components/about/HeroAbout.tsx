@@ -111,7 +111,8 @@ const HeroAbout: React.FC = () => {
             backgroundColor: '#1f75ff',
             borderRadius: '24px',
             zIndex: 0,
-            overflow: 'hidden' // Clip stars to blue box boundaries
+            overflow: 'hidden', // Clip stars to blue box boundaries
+            paddingBottom: isMobile ? '4.5rem' : '2rem'
           }}
           animate={{
             width: '90%',

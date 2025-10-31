@@ -4437,6 +4437,287 @@ body {
   padding-top: 0;
 }
 
+/* ===== MOBILE NAVBAR ===== */
+@media (max-width: 768px) {
+  .floating-nav-container {
+    justify-content: flex-start;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .floating-nav-mobile {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    position: relative;
+  }
+
+  .floating-nav-mobile .floating-nav-logo {
+    margin-right: 0.75rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--text);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+  }
+
+  .mobile-menu-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-menu-toggle i {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+  }
+
+  /* Hide desktop nav items on mobile */
+  .floating-nav-mobile .floating-nav-item,
+  .floating-nav-mobile .floating-nav-dropdown,
+  .floating-nav-mobile .floating-nav-login {
+    display: none;
+  }
+}
+
+/* ===== MOBILE NAVBAR MODAL ===== */
+#mobile-nav-modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
+.mobile-nav-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.mobile-nav-modal-backdrop.active {
+  opacity: 1;
+}
+
+.mobile-nav-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: var(--bg);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 90vw;
+  width: 100%;
+  max-width: 400px;
+  /* Disable inner scrolling per request */
+  max-height: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10001;
+}
+
+.mobile-nav-modal.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.mobile-nav-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  color: var(--text);
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.mobile-nav-modal-close:hover {
+  transform: scale(1.05);
+}
+
+.mobile-nav-modal-close i {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.mobile-nav-modal-nav {
+  padding: 2.5rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+/* Section heading inside modal (e.g., Solutions) */
+.mobile-nav-section {
+  padding: 0.75rem 1.5rem;
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  user-select: none;
+}
+
+.mobile-nav-modal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: var(--font-base);
+  font-weight: 500;
+  border-bottom: 1px solid #E5E7EB;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-nav-modal-item:last-of-type {
+  border-bottom: none;
+}
+
+.mobile-nav-modal-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--primary);
+}
+
+.mobile-nav-modal-button {
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border-radius: var(--radius);
+  font-weight: 600;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.mobile-nav-modal-button:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white;
+}
+
+/* ===== MOBILE NAVBAR ACCORDION ===== */
+.mobile-nav-accordion {
+  flex-direction: column;
+  padding: 0;
+  background: transparent;
+}
+
+.mobile-nav-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  /* match other modal items */
+  font-size: var(--font-base);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.mobile-nav-accordion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: transparent;
+}
+
+.mobile-nav-accordion-icon i {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.mobile-nav-accordion.expanded .mobile-nav-accordion-icon i {
+  transform: rotate(180deg);
+}
+
+.mobile-nav-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  border-top: 1px solid #E5E7EB;
+  background: transparent;
+}
+
+.mobile-nav-modal-subitem {
+  display: block;
+  padding: 0.875rem 1.5rem 0.875rem 3rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  border-bottom: 1px solid #E5E7EB;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  background: transparent;
+}
+
+.mobile-nav-modal-subitem:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav-modal-subitem:hover {
+  background: rgba(0, 0, 0, 0.02);
+  color: var(--primary);
+}
+
+/* Ensure Solutions label typography equals other items */
+.mobile-nav-accordion .mobile-tree-label {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* ===== FILE TREE LAYOUT ===== */
+.mobile-tree { position: relative; background: transparent; }
+.mobile-tree-item { position: relative; background: transparent; }
+.mobile-tree-children { border-left: none; background: transparent; }
+.mobile-nav-modal-nav > * { background: transparent; }
+
+.mobile-tree-children .mobile-tree-item { padding-left: 2rem; }
+.mobile-tree-children .mobile-tree-item::before { content: none; }
+.mobile-tree-label { position: relative; }
+.mobile-tree-cta { padding: 1rem 1.5rem 0 1.5rem; }
+
+/* Typography consistency for accordion trigger */
+.mobile-nav-accordion-trigger { font-size: var(--font-base); font-weight: 500; color: var(--text); }
+
 /* ===== UNIFIED FOOTER ===== */
 .footer-root {
   position: relative;
