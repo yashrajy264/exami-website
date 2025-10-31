@@ -38,13 +38,71 @@
     
     .story-section {
         padding: 80px 0;
-        background: var(--gray-50);
+        background: white;
     }
     
     .story-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
+        width: 100%;
+    }
+    
+    .story-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+    
+    .story-text-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .story-text-column h2 {
+        font-size: var(--font-3xl);
+        font-weight: 700;
+        color: var(--text);
+        margin: 0;
+    }
+    
+    .story-text-column p {
+        font-size: var(--font-base);
+        line-height: 1.8;
+        color: var(--text-muted);
+        margin: 0;
+    }
+    
+    .story-video-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .story-video-container {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .story-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-xl);
+    }
+    
+    @media (max-width: 768px) {
+        .story-content-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .story-section {
+            padding: 60px 0;
+        }
     }
     
     .story-timeline {
@@ -285,30 +343,35 @@
     <section class="story-section">
         <div class="container">
             <div class="story-content">
-                <h2 class="section-title">The Exami Story</h2>
-                <p class="section-subtitle">
-                    Every year, millions of Indian students face the same nightmare: server crashes during exam registrations, 
-                    lost documents, multiple application processes, and endless queues. We experienced this firsthand and 
-                    decided to build the solution India desperately needs.
-                </p>
-                
-                <div class="story-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <h3>The Problem</h3>
-                        <p>Identified the massive inefficiencies in India's examination system affecting 50+ million students annually.</p>
+                <div class="story-content-wrapper">
+                    <div class="story-text-column">
+                        <h2>How Exami born</h2>
+                        <p>
+                            It all began with a simple idea from my co-founder — to start a weekly Telegram newsletter that shared the latest examination updates and opportunities with students.
+                        </p>
+                        <p>
+                            At first, I dismissed it. After all, there were already countless websites, channels, and groups doing the same thing. But later that night, the thought stayed with me. As students, we had faced so many small frictions and gaps in the exam process — from confusing information to outdated forms and scattered updates — all of which ate into our actual study time.
+                        </p>
+                        <p>
+                            That's when it clicked: what if there was one single platform where students could discover any exam in the world, apply seamlessly without endless forms, and even plan their studies based on their exam and coaching schedules?
+                        </p>
+                        <p>
+                            The next day, we met in a park — two cups of coffee, one big idea, and a lot of curiosity. As we talked deeper, we realized the problem wasn't just on the student side. Institutions were struggling too — managing thousands of redundant applications, fake data, and inefficient systems that hurt their reputation.
+                        </p>
+                        <p>
+                            So we sketched out a plan — not just another app, but a complete framework for the modern examination era, connecting students and institutions directly, simplifying every step from discovery to admission.
+                        </p>
+                        <p>
+                            That's how Exami was born — from a simple idea to a global vision to bring simplicity, trust, and transparency back to education.
+                        </p>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <h3>The Vision</h3>
-                        <p>Conceptualized a unified platform with unique 8-digit IDs, eliminating redundant processes and server crashes.</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-year">2025</div>
-                        <h3>The Future</h3>
-                        <p>Building India's first comprehensive examination ecosystem with AI-powered security and seamless user experience.</p>
+                    <div class="story-video-column">
+                        <div class="story-video-container">
+                            <video class="story-video" autoplay muted loop playsinline>
+                                <source src="./video-elements/exami-story-video-snippet.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
